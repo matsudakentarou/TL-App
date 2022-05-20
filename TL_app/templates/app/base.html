@@ -10,23 +10,19 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <title>FetchAPIチュートリアル</title>
+    <title>TL-APP</title>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="/">FetchAPI</a>
+        <a class="navbar-brand" href="/">TL-APP</a>
       </div>
     </nav>
 
     <main>
       <div class="container">{% block content %} {% endblock %}</div>
     </main>
-
-    <footer class="py-2 bg-dark">
-      <p class="m-0 text-center text-white">Copyright &copy; フルスタックチャンネル</p>
-    </footer>
 
     {% block extrajs %} {% endblock %}
   </body>
