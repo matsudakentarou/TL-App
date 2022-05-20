@@ -1,0 +1,141 @@
+{% extends "app/base.html" %} {% block content %}
+<div class="my-4 text-center">
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <h2>記事の追加</h2>
+      <form id="add_blog">
+        {% csrf_token %}
+        <input class="form-control" type="text" id="post_title" required />
+        <button class="btn btn-primary mt-2" type="submit">送信</button>
+      </form>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <h2>記事の検索</h2>
+      <form id="search_blog">
+        {% csrf_token %}
+        <input class="form-control" type="text" id="search_title" />
+        <button class="btn btn-warning mt-2" type="submit">検索</button>
+      </form>
+    </div>
+  </div>
+</div>
+<hr />
+<div class="my-5 text-center">
+  <h2 class="mb-2">記事一覧</h2>
+  <div class="row" id="posts">
+    {% for blog in blog_data %}
+    <div class="col-4 mb-3">
+      <div class="card">
+        <div class="card-body">{{ blog.title }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %} {% block extrajs %}
+<script>
+  // https://developer.mozilla.org/ja/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data
+
+  // CSRF対策
+  const getCookie = (name) => {
+    if (document.cookie && document.cookie !== '') {
+      for (const cookie of document.cookie.split(';')) {
+        const [key, value] = cookie.trim().split('=')
+        if (key === name) {
+          return decodeURIComponent(value)
+        }
+      }
+    }
+  }
+  const csrftoken = getCookie('csrftoken')
+
+  // 記事追加
+  const addBlog = document.getElementById('add_blog')
+  addBlog.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const url = '{% url "add" %}'
+    const post_title = document.getElementById('post_title')
+    // URLのクエリパラメータを管理
+    const body = new URLSearchParams()
+    body.append('title', post_title.value)
+
+    fetch(url, {
+      method: 'POST',
+      body: body,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+        'X-CSRFToken': csrftoken,
+      },
+    })
+      .then((response) => {
+        // JSON形式に変換
+        return response.json()
+      })
+      .then((response) => {
+        // フォームをクリア
+        post_title.value = ''
+        // 追加するエレメント
+        const postArea = document.getElementById('posts')
+        const element = Object.assign(document.createElement('div'), { className: 'col-4 mb-3' })
+        const element2 = Object.assign(document.createElement('div'), { className: 'card' })
+        const element3 = Object.assign(document.createElement('div'), {
+          className: 'card-body',
+          textContent: response.title,
+        })
+        element.appendChild(element2)
+        element2.appendChild(element3)
+        // 最後に追加
+        postArea.insertBefore(element, postArea.lastChild.nextSibling)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  })
+
+  // 記事検索
+  const searchBlog = document.getElementById('search_blog')
+  searchBlog.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const url = '{% url "search" %}'
+    const search_title = document.getElementById('search_title')
+    // URLのクエリパラメータを管理
+    const body = new URLSearchParams()
+    body.append('title', search_title.value)
+
+    fetch(url, {
+      method: 'POST',
+      body: body,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+        'X-CSRFToken': csrftoken,
+      },
+    })
+      .then((response) => {
+        // JSON形式に変換
+        return response.json()
+      })
+      .then((response) => {
+        // フォームをクリア
+        search_title.value = ''
+        // 検索するエレメント
+        const postArea = document.getElementById('posts')
+        postArea.innerHTML = ''
+        for (const title of response.title_list) {
+          const element = Object.assign(document.createElement('div'), { className: 'col-4 mb-3' })
+          const element2 = Object.assign(document.createElement('div'), { className: 'card' })
+          const element3 = Object.assign(document.createElement('div'), {
+            className: 'card-body',
+            textContent: title,
+          })
+          element.appendChild(element2)
+          element2.appendChild(element3)
+          postArea.appendChild(element)
+        }
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  })
+</script>
+{% endblock %}
