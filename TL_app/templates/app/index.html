@@ -2,29 +2,23 @@
 <div class="my-4 text-center">
   <div class="row">
     <div class="col-md-6 mb-4">
-      <form id="add_blog">
+      <form id="add_tle">
         {% csrf_token %}
         <input class="form-control" type="text" id="post_title" required />
         <button class="btn btn-primary mt-2" type="submit">送信</button>
       </form>
     </div>
 
-    <div class="col-md-6 mb-4">
-      <form id="search_blog">
-        {% csrf_token %}
-        <input class="form-control" type="text" id="search_title" />
-        <button class="btn btn-warning mt-2" type="submit">検索</button>
-      </form>
-    </div>
+    
   </div>
 </div>
 <hr />
 <div class="my-5 text-center">
   <div class="row" id="posts">
-    {% for blog in blog_data %}
+    {% for tle in tle_data %}
     <div class="col-4 mb-3">
       <div class="card">
-        <div class="card-body">{{ blog.title }}</div>
+        <div class="card-body">{{ tle.title }}</div>
       </div>
     </div>
     {% endfor %}
@@ -48,8 +42,8 @@
   const csrftoken = getCookie('csrftoken')
 
   // 記事追加
-  const addBlog = document.getElementById('add_blog')
-  addBlog.addEventListener('submit', (e) => {
+  const addTLE = document.getElementById('add_tle')
+  addTLE.addEventListener('submit', (e) => {
     e.preventDefault()
     const url = '{% url "add" %}'
     const post_title = document.getElementById('post_title')
@@ -91,8 +85,8 @@
   })
 
   // 記事検索
-  const searchBlog = document.getElementById('search_blog')
-  searchBlog.addEventListener('submit', (e) => {
+  const searchTLE = document.getElementById('search_tle')
+  searchTLE.addEventListener('submit', (e) => {
     e.preventDefault()
     const url = '{% url "search" %}'
     const search_title = document.getElementById('search_title')
