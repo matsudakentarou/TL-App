@@ -20,23 +20,33 @@
           <input type="checkbox" id="menu-btn-check">
           <label for="menu-btn-check" class="menu-btn"><span></span></label>
           <!--ここからメニュー-->
-        <div class="menu-content">
-          <ul>
-              <li>
-                  <a href="#">メニューリンク1</a>
-              </li>
-              <li>
-                  <a href="#">メニューリンク2</a>
-              </li>
-              <li>
-                  <a href="#">メニューリンク3</a>
-              </li>
-          </ul>
-      </div>
-      <!--ここまでメニュー-->
+          <div class="menu-content">
+            <ul>
+                <li>
+                    <a href="#">メニューリンク1</a>
+                </li>
+                <li>
+                    <a href="#">メニューリンク2</a>
+                </li>
+                <li>
+                  <div class="my-4 text-center">
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <form id="add_tle">
+                          {% csrf_token %}
+                          <input class="form-control" type="text" id="post_title" required />
+                          <button class="btn btn-primary mt-2" type="submit">送信</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+            </ul>
+          </div>
+          <!--ここまでメニュー-->
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <form id="search_tle">
           {% csrf_token %}
           <input class="form-control" type="text" id="search_title" />
