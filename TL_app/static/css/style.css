@@ -53,15 +53,19 @@ main {
 	background-color: #ffffff;
 	position: absolute;
 }
+
 .menu-btn span:before {
 	bottom: 8px;
 }
+
 .menu-btn span:after {
 	top: 8px;
 }
+
 #menu-btn-check {
 	display: none;
 }
+
 .menu-content {
 	width: 100%;
 	height: 100%;
@@ -72,9 +76,11 @@ main {
 	background-color: #838383;
 	transition: all 0.5s;
 }
+
 .menu-content ul {
 	padding: 70px 10px 0;
 }
+
 .menu-content ul li {
 	border-bottom: solid 1px #ffffff;
 	list-style: none;
@@ -104,6 +110,7 @@ main {
 #menu-btn-check:checked ~ .menu-content {
     left: 0;/*メニューを画面内へ*/
 }
+
 .imgs{
 	height: 40vh;
 	width: auto;
@@ -112,6 +119,7 @@ main {
 	flex-flow: column;
 	
 }
+
 .img{
 	height:100px;
 	width: auto;
@@ -120,8 +128,9 @@ main {
 	margin-right: 10px;
 	margin-bottom: 20px;
 }
+
 .line{
-	background-color: rgb(252, 152, 1);
+	background-color: #35517d;
 	width: 100%;
 	height: 20px;
 	display: flex;
@@ -130,6 +139,7 @@ main {
 p{
 	color: #fefefe;
 }
+
 .events{
 	height: 60vh;
 	display: flex;
@@ -138,9 +148,10 @@ p{
   	overflow: auto;
 	scrollbar-width: none;
 }
+
 .events::-webkit-scrollbar {  
 	display: none; /*Google Chrome、Safari、Microsoft Edge対応のスクロールバー非表示コード*/
-      }
+}
 
 .event{
 	width: 100%;
@@ -156,6 +167,7 @@ p{
 	border-radius: 10px 0px 0px 10px;
 	box-shadow: 5px 5px 2px #bfbfbf;
 }
+
 .event-text{
 	background-color: #fefefe;
 	width: 200px;
@@ -169,9 +181,11 @@ p{
 	font-size: 0.6em;
 	padding-bottom: 4px;
 }
+
 .event-title{
 	font-size: 0.8em;
 }
+
 .event-id{
 	font-size: 0.4em;
 	padding-top: 8px;
