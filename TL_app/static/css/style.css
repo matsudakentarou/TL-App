@@ -190,3 +190,54 @@ p{
 	font-size: 0.4em;
 	padding-top: 8px;
 }
+.sidebar{
+	background-color: #ededed;
+	width: 30vw;
+	height: 90vh;
+	position: fixed;
+	right: 0;
+	border-radius: 10px 0 0 10px;
+	display: flex;
+	flex-direction: row;
+	box-shadow: 5px 5px 5px 5px #bfbfbf;
+
+	transition:
+		padding-top 300ms,
+		line-height 300ms;
+}
+.sidebar_main{
+	width: 90%;
+	margin-right: 5%;
+	display: flex;
+	flex-direction: column;
+}
+.TL-line{
+	background-color: #4669A2;
+	height: 1vh;
+	width: 100%;
+}
+
+.TLE_img{
+	height: 260px;
+	width: 100%;
+	background-color: #c3c3c3;
+}
+
+.PR{
+	height: 260px;
+	width: 100%;
+	background-color: #c3c3c3;
+	margin-top: 10px;	
+}
+
+.disvisible{
+	width: 2vw;
+	border: none
+}
+
+.sidebar.is-hidden {
+	right: -28vw;
+}
+.sidebar_main {
+	transition: opacity 1000ms;
+}
