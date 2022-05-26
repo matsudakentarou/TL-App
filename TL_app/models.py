@@ -38,6 +38,12 @@ class TLE(models.Model):
         null=True,
         default = timezone.now
         )
+    parent = models.ForeignKey(
+        TL,
+        on_delete=models.CASCADE,
+        editable = True,
+        default=1
+        )
 
     def __str__(self):
         return self.title
