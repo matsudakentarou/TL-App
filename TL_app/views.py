@@ -1,14 +1,16 @@
 from django.views.generic import View
 from django.shortcuts import render
-from .models import TLE
+from .models import (TLE, TL)
 from django.http import JsonResponse
 
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
         tle_data = TLE.objects.all()
+        tl_title = TL.objects.filter(id=1)
         return render(request, 'app/index.html', {
             'tle_data': tle_data,
+            'tl_title': tl_title,
         })
 
 

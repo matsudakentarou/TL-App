@@ -9,22 +9,26 @@ body {
 	display: flex;
 	flex-flow: column;
 	min-height: 80vh;
-}
-
-main {
-	margin-top: 80px;
+	margin: 0px;
 }
 
 .container{
 	width: 100%;
+	height: 100%;
 	display: flex;
 	margin-left: 20px;
 }
 
-.navbar{
+.header{
 	width: 100%;
 	height: 60px;
 	position: fixed;
+	background-color: #d1d1d1;
+}
+#search_tle{
+	margin: 10px 20px 10px auto;
+	width: 200px;
+
 }
 
 .posts{
@@ -42,7 +46,7 @@ main {
 	justify-content: center;
 	align-items: center;
 	z-index: 90;
-	background-color: #767676;
+	background-color: #d1d1d1;
 }
 
 .menu-btn span,
@@ -76,7 +80,7 @@ main {
 	top: 60px;
 	right: 100%;
 	z-index: 80;
-	background-color: #838383;
+	background-color: #e3e3e3;
 	transition: all 0.5s;
 }
 
@@ -88,6 +92,7 @@ main {
 	border-bottom: solid 1px #ffffff;
 	list-style: none;
 }
+
 .menu-content ul li a {
 	display: block;
 	width: 100%;
@@ -98,6 +103,7 @@ main {
 	padding: 9px 15px 10px 0;
 	position: relative;
 }
+
 .menu-content ul li a::before {
 	content: "";
 	width: 7px;
@@ -193,7 +199,7 @@ p{
 }
 .sidebar{
 	background-color: #ededed;
-	width: 30vw;
+	width: 400px;
 	height: 90vh;
 	position: fixed;
 	right: 0;
@@ -232,13 +238,35 @@ p{
 }
 
 .disvisible{
-	width: 2vw;
+	width: 40px;
 	border: none
 }
 
 .sidebar.is-hidden {
-	right: -28vw;
+	left: 100%;
 }
 .sidebar_main {
 	transition: opacity 1000ms;
+}
+
+.TL_info_tag{
+	left: 0px;
+	position: relative;top:80px;
+	width: 280px;
+	height: 60px;
+	box-shadow:5px 5px 5px #bfbfbf;
+	display: flex;
+	justify-content: space-between;
+
+}
+.text_tag{
+	padding-left: 24px;
+}
+
+.TL_img_tag{
+	width: 60px;
+	height: 60px;
+	background-color: #4669A2;
+	z-index: 2;
+	float: right;
 }
