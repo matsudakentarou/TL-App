@@ -2,8 +2,9 @@
 <div class="TL_info_tag">
   <div class="text_tag">
     <div class="TL_title_tag">{{ tl_title.0 }}</div>
-    <div class="TL_english_tag"></div>
+    <div class="TL_english_tag">{{ tl_english.0 }}</div>
     <div class="TL_day_tag"></div>
+    <div class="max">{{ oldest }}~{{ latest }}</div>
   </div>
   <div class="TL_img_tag"></div>
 </div>
@@ -23,6 +24,7 @@
         <div class="event-day">{{ tle.start_at|date:"Y" }}</div>
         <div class="event-title">{{ tle.title }}</div>
         <div class="event-id">{{ tle.id }}</div>
+        
       </div>
     </div>
     {% endfor %}

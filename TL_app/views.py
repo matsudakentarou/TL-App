@@ -3,16 +3,23 @@ from django.views.generic import View
 from django.shortcuts import render
 from .models import (TLE, TL)
 from django.http import JsonResponse
+from django.db.models import Max, Min
 
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
         parent_id = 1
         tl_title = TL.objects.filter(id=parent_id)
+        tl_english= TL.objects.filter(id=parent_id)#Englishってどうやって取り出したらいいんだっけ
         tle_data = TLE.objects.filter(parent=parent_id)
+        latest = TLE.objects.filter(parent=parent_id).aggregate(Max('end_at'))
+        oldest= TLE.objects.filter(parent=parent_id).aggregate(Min('start_at'))
         return render(request, 'app/index.html', {
             'tle_data': tle_data,
             'tl_title': tl_title,
+            'tl_english': tl_english,
+            'latest': latest['end_at__max'].year,
+            'oldest': oldest['start_at__min'].year,
         })
 
 
