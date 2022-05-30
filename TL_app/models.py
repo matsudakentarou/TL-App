@@ -2,9 +2,27 @@ from turtle import title
 from django.db import models
 from django.utils import timezone
 
+GENRE_CHOICES = (
+    ('people', '人物'),
+    ('Corporate', '企業'),
+    ('school', '学校'),
+    ('sport', 'スポーツ'),
+    ('science', '科学'),
+    ('culture', '文化'),
+    ('nature', '自然'),
+    ('politics・economy', '政治・経済'),
+    ('nation・city', '国家・都市'),
+    ('region', '地域'),
+    ('religion', '宗教'),
+    ('organization', '団体'),
+    ('space', '宇宙'),
+    ('other', 'その他'),
+)
+
 class TL(models.Model):
     title = models.CharField(max_length=255)
     english = models.CharField(max_length=255)
+    genre = models.CharField(max_length=255, choices=GENRE_CHOICES, default ='')
     date = models.DateTimeField(
         verbose_name='',
         editable = True,
