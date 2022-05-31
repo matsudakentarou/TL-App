@@ -1,4 +1,5 @@
 {% extends "app/base.html" %} {% block content %}
+  
 <div class="TL_info_tag">
   <div class="text_tag">
     {% for tl in tl_data %}
@@ -9,245 +10,31 @@
   <div class="TL_img_tag"></div>
 </div>
 <div class="container">
+  {% for year in for_range %}
   <div id="posts">
     <div class="imgs">
       <div class="img"></div>
     </div>
     <div class="line">
-      <p>1997</p>
+      <p>{{ year }}</p>
     </div>
+
     <div class="events">
     {% for tle in tle_data %}
-    <div class="event">
-      <div class="event-runk"></div>
-      <div class="event-text">
-        <div class="event-day">{{ tle.start_at|date:"Y" }}</div>
-        <div class="event-title">{{ tle.title }}</div>
-        <div class="event-id">{{ tle.id }}</div>
-        
+      
+      <div class="event">
+        <div class="event-runk"></div>
+        <div class="event-text">
+          <div class="event-day">{{ tle.start_at|date:"Y" }}</div>
+          <div class="event-title">{{ tle.title }}</div>
+          <div class="event-id">{{ tle.id }}</div>
+        </div>
       </div>
-    </div>
+      
     {% endfor %}
     </div>
   </div>
-  <div id="posts">
-    <div class="imgs">
-      <div class="img"></div>
-    </div>
-    <div class="line">
-      <p>1997</p>
-    </div>
-    <div class="events">
-    {% for tle in tle_data %}
-    <div class="event">
-      <div class="event-runk"></div>
-      <div class="event-text">
-        <div class="event-day">1997</div>
-        <div class="event-title">{{ tle.title }}</div>
-        <div class="event-id">1354216865</div>
-      </div>
-    </div>
-    {% endfor %}
-    </div>
-  </div>
-  <div id="posts">
-    <div class="imgs">
-      <div class="img"></div>
-    </div>
-    <div class="line">
-      <p>1997</p>
-    </div>
-    <div class="events">
-    {% for tle in tle_data %}
-    <div class="event">
-      <div class="event-runk"></div>
-      <div class="event-text">
-        <div class="event-day">1997</div>
-        <div class="event-title">{{ tle.title }}</div>
-        <div class="event-id">1354216865</div>
-      </div>
-    </div>
-    {% endfor %}
-    </div>
-  </div>
-  <div id="posts">
-    <div class="imgs">
-      <div class="img"></div>
-    </div>
-    <div class="line">
-      <p>1997</p>
-    </div>
-    <div class="events">
-    {% for tle in tle_data %}
-    <div class="event">
-      <div class="event-runk"></div>
-      <div class="event-text">
-        <div class="event-day">1997</div>
-        <div class="event-title">{{ tle.title }}</div>
-        <div class="event-id">1354216865</div>
-      </div>
-    </div>
-    {% endfor %}
-    </div>
-  </div>
-  <div id="posts">
-    <div class="imgs">
-      <div class="img"></div>
-    </div>
-    <div class="line">
-      <p>1997</p>
-    </div>
-    <div class="events">
-    {% for tle in tle_data %}
-    <div class="event">
-      <div class="event-runk"></div>
-      <div class="event-text">
-        <div class="event-day">1997</div>
-        <div class="event-title">{{ tle.title }}</div>
-        <div class="event-id">1354216865</div>
-      </div>
-    </div>
-    {% endfor %}
-    </div>
-  </div>
-  <div id="posts">
-    <div class="imgs">
-      <div class="img"></div>
-    </div>
-    <div class="line">
-      <p>1997</p>
-    </div>
-    <div class="events">
-    {% for tle in tle_data %}
-    <div class="event">
-      <div class="event-runk"></div>
-      <div class="event-text">
-        <div class="event-day">1997</div>
-        <div class="event-title">{{ tle.title }}</div>
-        <div class="event-id">1354216865</div>
-      </div>
-    </div>
-    {% endfor %}
-    </div>
-  </div>
-  <div id="posts">
-    <div class="imgs">
-      <div class="img"></div>
-    </div>
-    <div class="line">
-      <p>1997</p>
-    </div>
-    <div class="events">
-    {% for tle in tle_data %}
-    <div class="event">
-      <div class="event-runk"></div>
-      <div class="event-text">
-        <div class="event-day">1997</div>
-        <div class="event-title">{{ tle.title }}</div>
-        <div class="event-id">1354216865</div>
-      </div>
-    </div>
-    {% endfor %}
-    </div>
-  </div>
-  <div id="posts">
-    <div class="imgs">
-      <div class="img"></div>
-    </div>
-    <div class="line">
-      <p>1997</p>
-    </div>
-    <div class="events">
-    {% for tle in tle_data %}
-    <div class="event">
-      <div class="event-runk"></div>
-      <div class="event-text">
-        <div class="event-day">1997</div>
-        <div class="event-title">{{ tle.title }}</div>
-        <div class="event-id">1354216865</div>
-      </div>
-    </div>
-    {% endfor %}
-    </div>
-  </div>
-  <div id="posts">
-    <div class="imgs">
-      <div class="img"></div>
-    </div>
-    <div class="line">
-      <p>1997</p>
-    </div>
-    <div class="events">
-    {% for tle in tle_data %}
-    <div class="event">
-      <div class="event-runk"></div>
-      <div class="event-text">
-        <div class="event-day">1997</div>
-        <div class="event-title">{{ tle.title }}</div>
-        <div class="event-id">{{ tle.importance }}</div>
-      </div>
-    </div>
-    {% endfor %}
-    </div>
-  </div>
-  <div id="posts">
-    <div class="imgs">
-      <div class="img"></div>
-    </div>
-    <div class="line">
-      <p>1997</p>
-    </div>
-    <div class="events">
-    {% for tle in tle_data %}
-    <div class="event">
-      <div class="event-runk"></div>
-      <div class="event-text">
-        <div class="event-day">1997</div>
-        <div class="event-title">{{ tle.title }}</div>
-        <div class="event-id">1354216865</div>
-      </div>
-    </div>
-    {% endfor %}
-    </div>
-  </div>
-  <div id="posts">
-    <div class="imgs">
-      <div class="img"></div>
-    </div>
-    <div class="line">
-      <p>1997</p>
-    </div>
-    <div class="events">
-    {% for tle in tle_data %}
-    <div class="event">
-      <div class="event-runk"></div>
-      <div class="event-text">
-        <div class="event-day">1997</div>
-        <div class="event-title">{{ tle.title }}</div>
-        <div class="event-id">1354216865</div>
-      </div>
-    </div>
-    {% endfor %}
-    </div>
-  </div>
-  <div class="sidebar">
-    <button class="disvisible">〉</button>
-    <div class="sidebar_main">
-      <div class="TL_info">
-        <div class="TL_title"></div>
-        <div class="english"></div>
-        <div class="TL_day"></div>
-      </div>
-      <div class="TL-line"></div>
-      <div class="date"></div>
-      <div class="TLE_title">タイトルはここに</div>
-      <div class="TLE_img"></div>
-      <div class="TLE_text"></div>
-      <div class="PR"></div>
-      <div class="IN-LINE"></div>
-      <div class="OUT-LINE"></div>
-    </div>
-  </div>
+  {% endfor %}
 </div>
 {% endblock %} {% block extrajs %}
 <script>
