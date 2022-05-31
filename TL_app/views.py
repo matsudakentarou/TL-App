@@ -14,7 +14,7 @@ class IndexView(View):
         parent_id = 1
         tl_title = TL.objects.filter(id=parent_id)
         tl_data= TL.objects.filter(id=parent_id)#Englishってどうやって取り出したらいいんだっけ
-        tle_data = TLE.objects.filter(parent=parent_id)
+        tle_data = TLE.objects.order_by('start_at').filter(parent=parent_id)
         latest = TLE.objects.filter(parent=parent_id).aggregate(Max('end_at'))
         oldest= TLE.objects.filter(parent=parent_id).aggregate(Min('start_at'))
         for_range = [i for i in range(1800,2022)]

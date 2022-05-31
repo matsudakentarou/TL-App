@@ -10,28 +10,31 @@
   <div class="TL_img_tag"></div>
 </div>
 <div class="container">
-  {% for year in for_range %}
+{% regroup tle_data by start_at|date:"Y" as tle_start_at_list %}
+{% for tle_start_at in tle_start_at_list %}
+
   <div id="posts">
+    
     <div class="imgs">
       <div class="img"></div>
     </div>
     <div class="line">
-      <p>{{ year }}</p>
+      <p>{{ country.grouper }}</p>
     </div>
 
     <div class="events">
-    {% for tle in tle_data %}
-      
+
+      {% for t in tle_start_at.list %}
       <div class="event">
         <div class="event-runk"></div>
         <div class="event-text">
-          <div class="event-day">{{ tle.start_at|date:"Y" }}</div>
-          <div class="event-title">{{ tle.title }}</div>
-          <div class="event-id">{{ tle.id }}</div>
+          <div class="event-day">{{ t.start_at|date:"Y" }}</div>
+          <div class="event-title">{{ t.title }}</div>
+          <div class="event-id">{{ t.id }}</div>
         </div>
       </div>
-      
-    {% endfor %}
+      {% endfor %}
+
     </div>
   </div>
   {% endfor %}
