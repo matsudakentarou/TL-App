@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	color: #545454;
 }
       
 body {
@@ -9,11 +10,11 @@ body {
 	display: flex;
 	flex-flow: column;
 	min-height: 80vh;
-	margin: 0px;
+	margin: 0px;	
 }
 
 .container{
-	width: 100%;
+	width: 100vh;
 	height: 100%;
 	display: flex;
 	margin-left: 20px;
@@ -87,7 +88,7 @@ body {
 }
 
 .menu-content ul li {
-	border-bottom: solid 1px #ffffff;
+	border-top: solid 1px #ffffff;
 	list-style: none;
 }
 
@@ -96,7 +97,7 @@ body {
 	width: 100%;
 	font-size: 15px;
 	box-sizing: border-box;
-	color:#ffffff;
+	color: #646464;
 	text-decoration: none;
 	padding: 9px 15px 10px 0;
 	position: relative;
@@ -106,8 +107,8 @@ body {
 	content: "";
 	width: 7px;
 	height: 7px;
-	border-top: solid 2px #ffffff;
-	border-right: solid 2px #ffffff;
+	border-top: solid 2px #646464;
+	border-right: solid 2px #646464;
 	transform: rotate(45deg);
 	position: absolute;
 	left: 11px;
@@ -155,8 +156,10 @@ p{
 }
 
 .events::-webkit-scrollbar {  
-	display: none; /*Google Chrome、Safari、Microsoft Edge対応のスクロールバー非表示コード*/
+	display: none; 
+	height: 100px;
 }
+
 
 .event{
 	width: 100%;
@@ -205,7 +208,6 @@ p{
 	display: flex;
 	flex-direction: row;
 	box-shadow: 5px 5px 5px 5px #bfbfbf;
-
 	transition:
 		padding-top 300ms,
 		line-height 300ms;
@@ -255,7 +257,7 @@ p{
 	box-shadow:5px 5px 5px #bfbfbf;
 	display: flex;
 	justify-content: space-between;
-
+	z-index: -1;
 }
 .text_tag{
 	padding-left: 28px;
@@ -267,7 +269,6 @@ p{
 	width: 60px;
 	height: 60px;
 	background-color: #4669A2;
-	z-index: 2;
 	float: right;
 }
 .TL_english_tag{
