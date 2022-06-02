@@ -39,6 +39,17 @@ class TL(models.Model):
 
     def __str__(self):
         return self.title
+
+class year(models.Model):
+    title = models.CharField(max_length=255)
+    year = models.IntegerField()
+    TL = models.ManyToManyField(TL, blank=True)
+
+    class Meta:
+        ordering = ['year']
+
+    def __str__(self):
+        return self.title
 class TLE(models.Model):
     title = models.CharField(max_length=255)
     importance = models.IntegerField(default=1)
@@ -55,14 +66,16 @@ class TLE(models.Model):
         blank=True,
         null=True,
         default = timezone.now
-        )
+    )
     parent = models.ForeignKey(
         TL,
         on_delete=models.CASCADE,
         editable = True,
         default=1
-        )
+    )
+    year = models.ForeignKey(year, on_delete=models.CASCADE, editable = True, blank=True)
 
 
     def __str__(self):
         return self.title
+
