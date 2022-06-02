@@ -11,16 +11,16 @@
 </div>
 <div class="container">
 {% for tl in tl_data %}
-  {% for tl in tl_data %}
+  {% for y in Year %}
   <div id="posts">
     <div class="imgs">
       <div class="img"></div>
     </div>
     <div class="line">
-      <p>{{ tle_start_at.grouper }}</p>
+      <p>{{ y.year }}</p>
     </div>
     <div class="events">
-
+      {% for t in tle %}
         <div class="event">
           <div class="event-runk"></div>
           <div class="event-text">
@@ -29,7 +29,7 @@
             <div class="event-id">{{ t.id }}</div>
           </div>
         </div>
-
+      {% endfor %}
     </div>
   </div>
   {% endfor %}

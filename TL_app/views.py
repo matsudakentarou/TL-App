@@ -1,21 +1,17 @@
 from multiprocessing import parent_process
 from django.views.generic import View
 from django.shortcuts import render
-from .models import (TLE, TL, TL_year)
+from .models import (TLE, TL, Year)
 from django.http import JsonResponse
 from django.db.models import Max, Min
 
 
 
 class IndexView(View):
-
     def get(self, request, *args, **kwargs):
         parent_id = 1
         tl_data= TL.objects.filter(id=parent_id)
-<<<<<<< HEAD
-=======
-        tl_year = TL_year.objects.order_by('tl_year').filter(id=parent_id)
->>>>>>> dd8416c3aebdffd5ab6cf222807d61fbb924d9ac
+        year = Year.objects.filter(id=parent_id)
         tle_data = TLE.objects.order_by('start_at').filter(parent=parent_id)
         latest = TLE.objects.filter(parent=parent_id).aggregate(Max('end_at'))
         oldest= TLE.objects.filter(parent=parent_id).aggregate(Min('start_at'))
@@ -27,7 +23,7 @@ class IndexView(View):
         return render(request, 'app/index.html', {
             'tle_data': tle_data,
             'tl_data': tl_data,
-            'tl_year': tl_year,
+            'year': year,
             'latest': latest['end_at__max'].year,
             'oldest': oldest['start_at__min'].year,
             'for_range': for_range,
