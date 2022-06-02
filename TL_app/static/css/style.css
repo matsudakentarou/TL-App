@@ -26,11 +26,6 @@ body {
 	position: fixed;
 	background-color: #d1d1d1;
 }
-#search_tle{
-	margin: 10px 20px 10px auto;
-	width: 200px;
-
-}
 
 .posts{
 	height: 100px;
@@ -198,26 +193,7 @@ p{
 	font-size: 0.4em;
 	padding-top: 8px;
 }
-.sidebar{
-	background-color: #ededed;
-	width: 400px;
-	height: 90vh;
-	position: fixed;
-	right: 0;
-	border-radius: 10px 0 0 10px;
-	display: flex;
-	flex-direction: row;
-	box-shadow: 5px 5px 5px 5px #bfbfbf;
-	transition:
-		padding-top 300ms,
-		line-height 300ms;
-}
-.sidebar_main{
-	width: 90%;
-	margin-right: 5%;
-	display: flex;
-	flex-direction: column;
-}
+
 .TL-line{
 	background-color: #4669A2;
 	height: 1vh;
