@@ -11,7 +11,7 @@
 </div>
 <div class="container">
 {% for tl in tl_data %}
-  {% for y in Year %}
+  {% for y in year %}
   <div id="posts">
     <div class="imgs">
       <div class="img"></div>
@@ -20,15 +20,17 @@
       <p>{{ y.year }}</p>
     </div>
     <div class="events">
-      {% for t in tle %}
-        <div class="event">
-          <div class="event-runk"></div>
-          <div class="event-text">
-            <div class="event-day">{{ t.start_at|date:"Y/m/d" }}</div>
-            <div class="event-title">{{ t.title }}</div>
-            <div class="event-id">{{ t.id }}</div>
+      {% for t in tle_data %}
+        {% if t.year == y.year %}
+          <div class="event">
+            <div class="event-runk"></div>
+            <div class="event-text">
+              <div class="event-day">{{ t.start_at|date:"Y/m/d" }}</div>
+              <div class="event-title">{{ t.title }}</div>
+              <div class="event-id">{{ t.id }}</div>
+            </div>
           </div>
-        </div>
+        {% endif %}
       {% endfor %}
     </div>
   </div>
