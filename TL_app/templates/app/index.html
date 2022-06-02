@@ -10,28 +10,29 @@
   <div class="TL_img_tag"></div>
 </div>
 <div class="container">
-{% regroup tle_data by start_at|date:"Y" as tle_start_at_list %}
-{% for tle_start_at in tle_start_at_list %}
-<div id="posts">
-  <div class="imgs">
-    <div class="img"></div>
-  </div>
-  <div class="line">
-    <p>{{ tle_start_at.grouper }}</p>
-  </div>
-  <div class="events">
-    {% for t in tle_start_at.list %}
-      <div class="event">
-        <div class="event-runk"></div>
-        <div class="event-text">
-          <div class="event-day">{{ t.start_at|date:"Y/m/d" }}</div>
-          <div class="event-title">{{ t.title }}</div>
-          <div class="event-id">{{ t.id }}</div>
+{% for tl in tl_data %}
+  {% for tl in tl_data %}
+  <div id="posts">
+    <div class="imgs">
+      <div class="img"></div>
+    </div>
+    <div class="line">
+      <p>{{ tle_start_at.grouper }}</p>
+    </div>
+    <div class="events">
+
+        <div class="event">
+          <div class="event-runk"></div>
+          <div class="event-text">
+            <div class="event-day">{{ t.start_at|date:"Y/m/d" }}</div>
+            <div class="event-title">{{ t.title }}</div>
+            <div class="event-id">{{ t.id }}</div>
+          </div>
         </div>
-      </div>
-    {% endfor %}
+
+    </div>
   </div>
-</div>
+  {% endfor %}
 {% endfor %}
 </div>
 {% endblock %} {% block extrajs %}
