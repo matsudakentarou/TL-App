@@ -1,3 +1,4 @@
+from pyexpat import model
 from turtle import title
 from django.db import models
 from django.utils import timezone
@@ -40,6 +41,7 @@ class TL(models.Model):
     def __str__(self):
         return self.title
 
+<<<<<<< HEAD
 class year(models.Model):
     title = models.CharField(max_length=255)
     year = models.IntegerField()
@@ -50,6 +52,14 @@ class year(models.Model):
 
     def __str__(self):
         return self.title
+=======
+class TL_year(models.Model):
+    tl_year = models.IntegerField(default=1800)
+    parent = models.ManyToManyField(TL)
+
+    def __int__(self):
+        return self.tl_year
+>>>>>>> dd8416c3aebdffd5ab6cf222807d61fbb924d9ac
 class TLE(models.Model):
     title = models.CharField(max_length=255)
     importance = models.IntegerField(default=1)
@@ -72,8 +82,18 @@ class TLE(models.Model):
         on_delete=models.CASCADE,
         editable = True,
         default=1
+<<<<<<< HEAD
     )
     year = models.ForeignKey(year, on_delete=models.CASCADE, editable = True, blank=True)
+=======
+        )
+    year = models.ForeignKey(
+        TL_year,
+        on_delete=models.DO_NOTHING,
+        editable = True,
+        default=1
+    )
+>>>>>>> dd8416c3aebdffd5ab6cf222807d61fbb924d9ac
 
 
     def __str__(self):
