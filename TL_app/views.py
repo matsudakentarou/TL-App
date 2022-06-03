@@ -5,8 +5,6 @@ from .models import (TLE, TL, Year)
 from django.http import JsonResponse
 from django.db.models import Max, Min
 
-
-
 class IndexView(View):
     def get(self, request, *args, **kwargs):
         parent_id = 1
@@ -36,10 +34,12 @@ class AddView(View):
 
         tle = TLE()
         tle.title = title
+
         tle.save()
 
         data = {
             'title': title,
+
         }
         return JsonResponse(data)
 
