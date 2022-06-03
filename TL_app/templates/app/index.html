@@ -1,40 +1,37 @@
 {% extends "app/base.html" %} {% block content %}
-  
+{% for tl in tl_data %}  
 <div class="TL_info_tag">
   <div class="text_tag">
-    {% for tl in tl_data %}
+    
     <div class="TL_title_tag">{{ tl.title }}</div>
     <div class="TL_english_tag">{{ tl.english }}</div>
-    {% endfor %}
+    
   </div>
   <div class="TL_img_tag"></div>
 </div>
 <div class="container">
-{% for tl in tl_data %}
-  {% for y in year %}
-  <div id="posts">
-    <div class="imgs">
-      <div class="img"></div>
-    </div>
-    <div class="line">
-      <p>{{ y.year }}</p>
-    </div>
-    <div class="events">
-      {% for t in tle_data %}
-        {% if t.year == y.year %}
-          <div class="event">
-            <div class="event-runk"></div>
-            <div class="event-text">
-              <div class="event-day">{{ t.start_at|date:"Y/m/d" }}</div>
-              <div class="event-title">{{ t.title }}</div>
-              <div class="event-id">{{ t.id }}</div>
-            </div>
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
+{% for year in year %}
+<div id="posts">
+  <div class="imgs">
+    <div class="img"></div>
   </div>
-  {% endfor %}
+  <div class="line">
+    <p>{{ year.title }}</p>
+  </div>
+  <div class="events">
+    {% for tle in year.tle.all %}
+      <div class="event">
+        <div class="event-runk"></div>
+        <div class="event-text">
+          <div class="event-day">{{ tle.start_at|date:"Y/m/d" }}</div>
+          <div class="event-title">{{ tle.title }}</div>
+          <div class="event-id">{{ tle.id }}</div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
 {% endfor %}
 </div>
 {% endblock %} {% block extrajs %}

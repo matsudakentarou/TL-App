@@ -44,7 +44,7 @@ class TL(models.Model):
 class Year(models.Model):
     title = models.CharField(max_length=255)
     year = models.IntegerField()
-    TL = models.ManyToManyField(TL, blank=True)
+    TL = models.ManyToManyField(TL, blank=True,)
 
     class Meta:
         ordering = ['year']
@@ -77,7 +77,7 @@ class TLE(models.Model):
         default=1
     )
     year = models.ForeignKey(
-        Year, on_delete=models.CASCADE, editable = True, blank=True
+        Year, on_delete=models.CASCADE, editable = True, blank=True, related_name='tle'
     )
 
     def __str__(self):
