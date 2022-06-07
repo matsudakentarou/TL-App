@@ -251,3 +251,50 @@ p{
 .TL_english_tag{
 	font-size: 6px;
 }
+
+.TLS{
+	width: 400px;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	right: 0;
+	background-color: #f1f1f1;
+	box-shadow: 10px 10px 10px 20px #bfbfbf;
+}
+
+
+
+    /* タブ */
+    .tab_class {
+	width: calc(100%/2);
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	display: block;
+	float: left;
+	text-align: center;
+	transition: all 0.2s ease;
+    }
+    .tab_class:hover {
+	opacity: 0.75;
+    }
+    /* ラジオボタンを非表示に */
+    input[name="tab_name"] {
+	display: none;
+    }
+    /* 内容部分 */
+    .content_class {
+	display: none;
+	clear: both;     /* floatを解除 */
+	overflow: hidden;
+    }
+    
+    /* 選択されたタブ */
+    input:checked + .tab_class {
+	color: rgb(116, 32, 32);
+    }
+    /* 選択されたタブの内容のみを表示 */
+    #tab1:checked ~ #content1_class,
+    #tab2:checked ~ #content2_class{
+	display: block;
+    }

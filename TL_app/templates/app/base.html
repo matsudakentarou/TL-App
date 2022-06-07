@@ -45,7 +45,15 @@
     </nav>
     <main>
       {% block content %} {% endblock %}
-      
+      <div class="TLS">
+        <input id="tab1" type="radio" name="tab_name" checked>
+        <label class="tab_class" for="tab1">TLS</label>
+        <input id="tab2" type="radio" name="tab_name">
+        <label class="tab_class" for="tab2">TLEC</label>
+  
+        <div class="content_class" id="content1_class">TLS</div>
+        <div class="content_class" id="content2_class">TLEC</div>
+      </div>
     </main>
 
     {% block extrajs %} {% endblock %}
