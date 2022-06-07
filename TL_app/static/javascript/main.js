@@ -11,3 +11,7 @@ function TLClick(){
 	const tab1 = document.getElementById( "tab1" ) ;
 	tab1.checked = true ;
 }
+
+function sidebarhide(){
+	document.getElementById("sidebar").style.display="none";
+}

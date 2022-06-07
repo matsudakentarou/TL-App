@@ -218,9 +218,9 @@ p{
 
 button.hide{
 	width: 40px;
-	height: 600px;
+	height: 100%;
 	border: none;
-	background-color: #646464;
+	float: left;
 	
 }
 
@@ -261,7 +261,7 @@ button.hide{
 	background-color: #f1f1f1;
 	box-shadow: 10px 10px 10px 20px #bfbfbf;
 	display: none;
-	float: left;
+	
 }
 
 
@@ -273,7 +273,6 @@ button.hide{
 	line-height: 50px;
 	text-align: center;
 	display: block;
-	float: left;
 	text-align: center;
 	transition: all 0.2s ease;
     }
@@ -287,7 +286,6 @@ button.hide{
     /* 内容部分 */
     .content_class {
 	display: none;
-	clear: both;     /* floatを解除 */
 	overflow: hidden;
     }
     
