@@ -46,13 +46,31 @@
     <main>
       {% block content %} {% endblock %}
       <div class="TLS">
-        <input id="tab1" type="radio" name="tab_name" checked>
+        <input id="tab1" type="radio" name="tab_name">
         <label class="tab_class" for="tab1">TLS</label>
         <input id="tab2" type="radio" name="tab_name">
         <label class="tab_class" for="tab2">TLEC</label>
-  
-        <div class="content_class" id="content1_class">TLS</div>
-        <div class="content_class" id="content2_class">TLEC</div>
+
+        <div class="content_class" id="content1_class"></div>
+        <div class="content_class" id="content2_class">
+          <div class="TLS_info">
+            <div class="text_area">
+              <div class="TL_title">タイムラインのタイトル</div>
+              <div class="TL_english">english</div>
+              <div class="TL_date">1982.10.25</div>
+            </div>
+            
+          </div>
+          <div class="event_date">2020-11-15</div>
+          <div class="event_title">タイトル</div>
+          <div class="event_img">画像</div>
+          <div class="event_body">bodyここに長い文章が入ります</div>
+          <div class="event_inline">関連TL-IN-LINE</div>
+          <div class="event_outline">関連TL-OUT-LINE</div>
+        </div>
+       
+          
+        </div>
       </div>
     </main>
 

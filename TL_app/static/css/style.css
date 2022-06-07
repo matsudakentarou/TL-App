@@ -298,3 +298,9 @@ p{
     #tab2:checked ~ #content2_class{
 	display: block;
     }
+
+.event_img{
+	background-color: #35517d;
+	width: 100%;
+	height: 200px;
+}

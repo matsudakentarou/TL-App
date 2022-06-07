@@ -11,7 +11,7 @@
     
   {% for y in for_range %}
   <div id="posts">
-
+    
     <div class="imgs">
       <div class="img"></div>
     </div>
@@ -27,6 +27,7 @@
             <div class="event-day">{{ tle.start_at|date:"Y/m/d" }}</div>
             <div class="event-title">{{ tle.title }}</div>
             <div class="event-id">{{ tle.id }}</div>
+            <input type="radio" value="選択" onclick="Check();"> 
           </div>
         </div>
         {% endif %}
