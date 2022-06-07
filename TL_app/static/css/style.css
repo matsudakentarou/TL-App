@@ -25,6 +25,7 @@ body {
 	height: 60px;
 	position: fixed;
 	background-color: #d1d1d1;
+	z-index: 1;
 }
 
 .posts{
@@ -175,6 +176,7 @@ p{
 .event-text{
 	background-color: #fefefe;
 	width: 200px;
+	height: 100%;
 	margin-right: 20px;
 	padding-left: 8px;
 	border-radius: 0px 10px 10px 0px;
@@ -214,16 +216,12 @@ p{
 	margin-top: 10px;	
 }
 
-.disvisible{
+button.hide{
 	width: 40px;
-	border: none
-}
-
-.sidebar.is-hidden {
-	left: 100%;
-}
-.sidebar_main {
-	transition: opacity 1000ms;
+	height: 600px;
+	border: none;
+	background-color: #646464;
+	
 }
 
 .TL_info_tag{
@@ -234,33 +232,36 @@ p{
 	box-shadow:5px 5px 5px #bfbfbf;
 	display: flex;
 	justify-content: space-between;
-	z-index: -1;
+	z-index: 0;
 }
 .text_tag{
 	padding-left: 28px;
 	padding-top: 10px;
 	font-size: 14px;
+	cursor: pointer;
+	width:220px;
+	height: 100%;
 }
 
 .TL_img_tag{
 	width: 60px;
 	height: 60px;
 	background-color: #4669A2;
-	float: right;
 }
 .TL_english_tag{
 	font-size: 6px;
 }
 
-.TLS{
+.sidebar{
 	width: 400px;
-	height: 100vh;
+	height: calc(100vh);
 	position: fixed;
-	top: 0;
+	bottom: 0;
 	right: 0;
 	background-color: #f1f1f1;
 	box-shadow: 10px 10px 10px 20px #bfbfbf;
 	display: none;
+	float: left;
 }
 
 
@@ -304,4 +305,22 @@ p{
 	background-color: #35517d;
 	width: 100%;
 	height: 200px;
+}
+#radio{
+	display: none;
+}
+#TLradio{
+	display: none;
+}
+
+#content1_class{
+	height: 100%;
+	width: 100%;
+	background-color: #4669A2;
+}
+#tab1{
+	display: none;
+}
+#tab2{
+	display: none;
 }

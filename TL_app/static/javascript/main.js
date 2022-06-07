@@ -1,16 +1,13 @@
 const sidebar = document.getElementById("sidebar");
 
-document.addEventListener('click', (e) => {
-	if (sidebar.style.display=="block"){
-		if(!e.target.closest('sidebar')) {
-			sidebar.style.display="none";
-		}
-	}else{
-		document.getElementById("sidebar").style.display="block";
-		var element = document.getElementById( "tab2" ) ;
-		element.checked = true ;
+function TLEClick(){
+	document.getElementById("sidebar").style.display="block";
+	const tab2 = document.getElementById( "tab2" ) ;
+	tab2.checked = true ;
+}
 
-	}
-
-		
-})
+function TLClick(){
+	document.getElementById("sidebar").style.display="block";
+	const tab1 = document.getElementById( "tab1" ) ;
+	tab1.checked = true ;
+}
