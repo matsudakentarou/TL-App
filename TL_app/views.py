@@ -22,18 +22,3 @@ class IndexView(View):
             'for_range': for_range,
         })
 
-
-class AddView(View):
-    def post(self, request, *args, **kwargs):
-        title = request.POST.get('title')
-
-        tle = TLE()
-        tle.title = title
-
-        tle.save()
-
-        data = {
-            'title': title,
-
-        }
-        return JsonResponse(data)
