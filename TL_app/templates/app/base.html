@@ -50,22 +50,42 @@
         <input id="tab2" type="radio" name="tab_name">
         <button class="hide" onclick="sidebarhide();"></button>
         <div class="content_class" id="content1_class">
-
-        </div>
-        <div class="content_class" id="content2_class">
-          <div class="TLS_info">
-            <div class="text_area">
-              <div class="TL_title">タイムラインのタイトル</div>
-              <div class="TL_english">english</div>
-              <div class="TL_date">1982.10.25</div>
+          {% for tl in tl_data %}
+          <div class="sidebar_main">
+            <div class="TL_title">{{ tl.title }}</div>
+            <div class="TL_english">{{ tl.english }}</div>
+            <div class="TL_date">{{ tl.date|date:"Y" }}</div>
+            <div class="TL_abstract">{{ tl.abstract }}</div>
+            <div class="TL_img">img</div>
+            <div class="TL_body">{{ tl.body }}</div>
+            <div class="TL_PR"></div>
+            <div class="IN_LINE">
+              <div class="IN-LINE_title">IN-LINE</div>
+            </div>
+            <div class="OUT_LINE">
+              <div class="OUT-LINE_title">OUT-LINE</div>
             </div>
           </div>
-          <div class="event_date">2020-11-15</div>
-          <div class="event_title">タイトル</div>
-          <div class="event_img">画像</div>
-          <div class="event_body">bodyここに長い文章が入ります</div>
-          <div class="event_inline">関連TL-IN-LINE</div>
-          <div class="event_outline">関連TL-OUT-LINE</div>
+          {% endfor %}
+        </div>
+        <div class="content_class" id="content2_class">
+          {% for tl in tl_data %}
+          <div class="sidebar_main">
+            <div class="TLS_info">
+              <div class="text_area">
+                <div class="TL_title">{{ tl.title }}</div>
+                <div class="TL_english">{{ tl.english }}</div>
+                <div class="TL_date">{{ tl.date|date:"Y" }}</div>
+              </div>
+            </div>
+            <div class="event_date">2020-11-15</div>
+            <div class="event_title">タイトル</div>
+            <div class="event_img">画像</div>
+            <div class="event_body">bodyここに長い文章が入ります</div>
+            <div class="event_inline">TL-IN-LINE</div>
+            <div class="event_outline">TL-OUT-LINE</div>
+          </div>
+          {% endfor %}
         </div>
       </div>
     </main>

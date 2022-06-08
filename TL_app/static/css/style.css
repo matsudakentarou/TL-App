@@ -197,24 +197,13 @@ p{
 	padding-top: 8px;
 }
 
-.TL-line{
-	background-color: #4669A2;
-	height: 1vh;
-	width: 100%;
-}
-
 .TLE_img{
 	height: 260px;
 	width: 100%;
 	background-color: #c3c3c3;
 }
 
-.PR{
-	height: 260px;
-	width: 100%;
-	background-color: #c3c3c3;
-	margin-top: 10px;	
-}
+
 
 button.hide{
 	width: 40px;
@@ -261,13 +250,13 @@ button.hide{
 	background-color: #f1f1f1;
 	box-shadow: 10px 10px 10px 20px #bfbfbf;
 	display: none;
-	
+	z-index: 2;
 }
 
 
 
-    /* タブ */
-    .tab_class {
+/* タブ */
+.tab_class {
 	width: calc(100%/2);
 	height: 50px;
 	line-height: 50px;
@@ -275,29 +264,30 @@ button.hide{
 	display: block;
 	text-align: center;
 	transition: all 0.2s ease;
-    }
-    .tab_class:hover {
+}
+
+.tab_class:hover {
 	opacity: 0.75;
-    }
-    /* ラジオボタンを非表示に */
-    input[name="tab_name"] {
+}
+/* ラジオボタンを非表示に */
+input[name="tab_name"] {
 	display: none;
-    }
-    /* 内容部分 */
-    .content_class {
+}
+/* 内容部分 */
+.content_class {
 	display: none;
 	overflow: hidden;
-    }
-    
-    /* 選択されたタブ */
-    input:checked + .tab_class {
+}
+
+/* 選択されたタブ */
+input:checked + .tab_class {
 	color: rgb(116, 32, 32);
-    }
-    /* 選択されたタブの内容のみを表示 */
-    #tab1:checked ~ #content1_class,
-    #tab2:checked ~ #content2_class{
+}
+/* 選択されたタブの内容のみを表示 */
+#tab1:checked ~ #content1_class,
+#tab2:checked ~ #content2_class{
 	display: block;
-    }
+}
 
 .event_img{
 	background-color: #35517d;
@@ -313,12 +303,67 @@ button.hide{
 
 #content1_class{
 	height: 100%;
-	width: 100%;
-	background-color: #4669A2;
+	width: calc(100%-40px);
+	padding-top: 50px;
+
+}
+#content2_class{
+	height: 100%;
+	width: calc(100%-60px);
+	padding-top: 50px;
+
 }
 #tab1{
 	display: none;
 }
 #tab2{
 	display: none;
+}
+
+.sidebar_main{
+	height: 100%;
+	width: 100%;
+	padding-right: 25px;
+	overflow: scroll;
+}
+.TL_title{
+	font-size: 20px;
+	font-weight:bold;
+	
+}
+.TL_english{
+	font-size: 14px;
+}
+.TL_date{
+	font-size: 8px;
+}
+.TL_abstract{
+	font-size: 14px;
+	margin-top: 40px;
+}
+.TL_img{
+	height: 260px;
+	width: 100%;
+	background-color: #4669A2;
+	margin-top: 40px;		
+}
+.TL_body{
+	font-size: 14px;
+	margin-top: 40px;
+}
+.TL_PR{
+	height: 200px;
+	width: 300px;
+	background-color: #4669A2;
+	margin-top: 40px;	
+}
+.IN_LINE{
+	margin-top: 20px;
+}
+.OUT_LINE{
+	margin-top: 20px;
+}
+
+.event_date{
+	margin-top: 20px;
 }

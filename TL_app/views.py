@@ -21,4 +21,11 @@ class IndexView(View):
             'oldest': oldest['start_at__min'].year,
             'for_range': for_range,
         })
+    
+    def post(self, request, *args, **kwargs):
+        tle_id = request.POST['id']
+        tle_data_detail = TLE.objects.order_by('start_at').filter(id=tle_id)
+        return render(request, 'app/andex.html',{
+            'tle_data_detail': tle_data_detail,
+        })
 
