@@ -1,7 +1,9 @@
+from email.policy import default
 from pyexpat import model
 from turtle import title
 from django.db import models
 from django.utils import timezone
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 GENRE_CHOICES = (
     ('people', '人物'),
@@ -66,6 +68,7 @@ class TLE(models.Model):
         default=1
     )
     year = models.IntegerField(default=1800)
+    rank = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(3)], default=1)
 
     def __str__(self):
         return self.title

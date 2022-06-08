@@ -165,8 +165,22 @@ p{
 	display: flex;
 }
 
-.event-runk{
+.event-rank3{
 	background-color: #4669A2;
+	width: 10px;
+	height: 100%;
+	border-radius: 10px 0px 0px 10px;
+	box-shadow: 5px 5px 2px #bfbfbf;
+}
+.event-rank2{
+	background-color: #6885b3;
+	width: 10px;
+	height: 100%;
+	border-radius: 10px 0px 0px 10px;
+	box-shadow: 5px 5px 2px #bfbfbf;
+}
+.event-rank1{
+	background-color: #a6b6d1;
 	width: 10px;
 	height: 100%;
 	border-radius: 10px 0px 0px 10px;
@@ -328,7 +342,6 @@ input:checked + .tab_class {
 }
 .TL_title{
 	font-size: 20px;
-	font-weight:bold;
 	
 }
 .TL_english{
@@ -366,4 +379,17 @@ input:checked + .tab_class {
 
 .event_date{
 	margin-top: 20px;
+}
+.event_title{
+	font-size: 20px;
+}
+.event_img{
+	height: 200px;
+	width: 100%;
+	background-color: #4669A2;
+	margin-top: 40px;
+}
+.event_body{
+	font-size: 14px;
+	margin-top: 40px;
 }

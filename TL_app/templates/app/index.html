@@ -24,16 +24,15 @@
       {% for tle in tle_data %}
         {% if y|stringformat:"s" in tle.year|stringformat:"s" %}
         <div class="event">
-          <div class="event-runk"></div>
-          <form action="" method="POST">
-            {% csrf_token %}
-            <input type="radio" id=radio class="radio" value="選択" onclick="TLEClick();">
-            <label for="radio" class="event-text">
-              <div class="event-day">{{ tle.start_at|date:"Y/m/d" }}</div>
-              <div class="event-title">{{ tle.title }}</div>
-              <div class="event-id">{{ tle.id }}</div>
-            </label>
-          </form>
+          {% if tle.rank == 3 %}<div class="event-rank3"></div>{% endif %}
+          {% if tle.rank == 2 %}<div class="event-rank2"></div>{% endif %}
+          {% if tle.rank == 1 %}<div class="event-rank1"></div>{% endif %}
+          <input type="radio" id=radio class="radio" value="選択" onclick="TLEClick();">
+          <label for="radio" class="event-text">
+            <div class="event-day">{{ tle.start_at|date:"Y/m/d" }}</div>
+            <div class="event-title">{{ tle.title }}</div>
+            <div class="event-id">{{ tle.id }}</div>
+          </label>
         </div>
         {% endif %}
       {% endfor %}
