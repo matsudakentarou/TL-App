@@ -1,7 +1,7 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="ja">
+  <div id="app">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,12 +10,13 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <script src="{% static 'javascript/main.js' %}"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+
     <title>TL-APP</title>
   </head>
-<div id="app">
+
   <body>
+
     <nav class="header">
       <div class="container">
         <div class="hamburger-menu">
@@ -28,11 +29,13 @@
                     <a href="#">メニューリンク1</a>
                 </li>
                 <li>
-                    <a href="#">メニューリンク2</a>
+                    <a href="#">[[ tasks ]]</a>
                 </li>
+                
                 <li>
-                  <form @submit.prevent="createTask">
+                  <form @submit.prevent="createTle">
                     <input type="text" class="form-control" v-model="tle.title" placeholder="タイトル">
+                    <input type="number"  v-model="tle.year" placeholder="年代">
                     <button type="submit" class="btn">追加</button>
                   </form>
                 </li>
@@ -89,8 +92,11 @@
         </div>
       </div>
     </main>
-
-    {% block extrajs %} {% endblock %}
+    <script>
+      const URL = '{% url "index" %}';
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.0/dist/js.cookie.min.js"></script>
+    <script src="{% static 'javascript/main.js' %}"></script>
   </body>
 </div>
 </html>

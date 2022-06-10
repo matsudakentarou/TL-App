@@ -10,11 +10,9 @@ from .forms import TleForm
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
-        parent_id = 1
+        parent_id = 3
         tl_data= TL.objects.filter(id=parent_id)
         tle_data = TLE.objects.order_by('start_at').filter(parent=parent_id)
-        latest = TLE.objects.filter(parent=parent_id).aggregate(Max('end_at'))
-        oldest= TLE.objects.filter(parent=parent_id).aggregate(Min('start_at'))
         for_range = [i for i in range(1800,2022)]
 
         if request.headers.get("Content-Type") == "application/json":
@@ -27,8 +25,6 @@ class IndexView(View):
         return render(request, 'app/index.html', {
             'tle_data': tle_data,
             'tl_data': tl_data,
-            'latest': latest['end_at__max'].year,
-            'oldest': oldest['start_at__min'].year,
             'for_range': for_range,
         })
     
@@ -41,7 +37,7 @@ class IndexView(View):
         if form.is_valid():
             new_tle = form.save()
             return JsonResponse({"tle": model_to_dict(new_tle)}, status=200)
-        return redirect("tle_list_url")
+        return redirect("index_url")
     
 
 
@@ -65,7 +61,7 @@ class TleView(View):
         if form.is_valid():
             new_tle = form.save()
             return JsonResponse({"tle": model_to_dict(new_tle)}, status=200)
-        return redirect("tle_list_url")
+        return redirect("index_url")
 
     def put(self, request):
         response = json.loads(request.body)

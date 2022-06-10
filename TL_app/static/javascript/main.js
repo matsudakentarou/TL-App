@@ -20,6 +20,7 @@ const App = {
 	data() {
 	  return {
 	    tle: {title: ''},
+	    tasks: ['test'],
 	    tles:[''],
 	  }
 	  },
@@ -50,6 +51,7 @@ const App = {
 			    };
 			    if (method == 'post') {
 				this.tle.title = ''
+				this.tle.year = ''
 				this.getTles();
 			    };
 			    if (method == 'put') {
@@ -63,7 +65,7 @@ const App = {
 			    console.error('There has been a problem with your fetch operation:', error);
 			});
 		},
-		getTle(){
+		getTles(){
 			this.sendRequest(URL, 'get');
 		},
 		createTle(){
@@ -83,4 +85,4 @@ const App = {
 	},
       },
 }
-Vue.createApp(App).mount('#app')
+Vue.createApp(App).mount('#app');

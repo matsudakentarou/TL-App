@@ -9,4 +9,5 @@ class TleForm(forms.ModelForm):
         fields = ["title"]
         widgets = {
             "title": forms.TextInput(attrs={"class": "form-control", "placeholder": "イベント"}),
+	    "year": forms.TextInput(attrs={"class": "form-control", "placeholder": "年代"}),
         }
