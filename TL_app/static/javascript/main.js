@@ -15,3 +15,72 @@ function TLClick(){
 function sidebarhide(){
 	document.getElementById("sidebar").style.display="none";
 }
+
+const App = {
+	data() {
+	  return {
+	    tle: {title: ''},
+	    tles:[''],
+	  }
+	  },
+	compilerOptions: {
+	    delimiters: ['[[', ']]'],
+	},
+	methods: {
+		sendRequest(url, method, data){
+			const csrftoken = Cookies.get('csrftoken');
+			const myHeaders = new Headers({
+			    'Content-Type': 'application/json',
+			});
+			if(method !== 'get'){
+			    myHeaders.set('X-CSRFToken', csrftoken)
+			};
+	    
+			fetch(url, {
+			    method: method,
+			    headers: myHeaders,
+			    body: data,
+			})
+			.then((response) => {
+			    return response.json();
+			})
+			.then((response) => {
+			    if (method == 'get') {
+				this.Tles = response;
+			    };
+			    if (method == 'post') {
+				this.tle.title = ''
+				this.getTles();
+			    };
+			    if (method == 'put') {
+				this.getTles();
+			    };
+			    if (method == 'put' || method == 'delete') {
+				this.getTles();
+			    };
+			})
+			.catch(error => {
+			    console.error('There has been a problem with your fetch operation:', error);
+			});
+		},
+		getTle(){
+			this.sendRequest(URL, 'get');
+		},
+		createTle(){
+			this.getTles();
+			this.sendRequest(URL, 'post',JSON.stringify(this.tle));
+		},
+		updateTle(tle){
+			this.getTles();
+			this.sendRequest(URL, 'put',JSON.stringify(tle));
+		},
+		deleteTle(tle){
+			this.getTles();
+			this.sendRequest(URL, 'delete',JSON.stringify(tle));
+		},
+	created() {
+	  	this.getTles();
+	},
+      },
+}
+Vue.createApp(App).mount('#app')

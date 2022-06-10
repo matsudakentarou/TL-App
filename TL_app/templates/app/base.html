@@ -14,7 +14,7 @@
     <script src="{% static 'javascript/main.js' %}"></script>
     <title>TL-APP</title>
   </head>
-
+<div id="app">
   <body>
     <nav class="header">
       <div class="container">
@@ -31,20 +31,10 @@
                     <a href="#">メニューリンク2</a>
                 </li>
                 <li>
-                  <div id="app">
-                    {# 追加 #}
-                    <form @submit.prevent="createTask">
-                      <div class="form-group row">
-                          <div class="col-9">
-                              {# 追加 #}
-                              <input type="text" class="form-control" v-model="task.title" placeholder="卵を買う">
-                          </div>
-                          <div class="col-3">
-                              <button type="submit" class="btn btn-primary mt-auto">タスクを追加</button>
-                          </div>
-                      </div>
-                    </form>
-                  </div>>
+                  <form @submit.prevent="createTask">
+                    <input type="text" class="form-control" v-model="tle.title" placeholder="タイトル">
+                    <button type="submit" class="btn">追加</button>
+                  </form>
                 </li>
             </ul>
           </div>
@@ -102,4 +92,5 @@
 
     {% block extrajs %} {% endblock %}
   </body>
+</div>
 </html>

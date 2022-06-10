@@ -94,23 +94,12 @@ body {
 	width: 100%;
 	font-size: 15px;
 	box-sizing: border-box;
-	color: #646464;
 	text-decoration: none;
 	padding: 9px 15px 10px 0;
 	position: relative;
 }
 
-.menu-content ul li a::before {
-	content: "";
-	width: 7px;
-	height: 7px;
-	border-top: solid 2px #646464;
-	border-right: solid 2px #646464;
-	transform: rotate(45deg);
-	position: absolute;
-	left: 11px;
-	top: 16px;
-}
+
 
 #menu-btn-check:checked ~ .menu-content {
     right: 70%;/*メニューを画面内へ*/
@@ -293,10 +282,6 @@ input[name="tab_name"] {
 	overflow: hidden;
 }
 
-/* 選択されたタブ */
-input:checked + .tab_class {
-	color: rgb(116, 32, 32);
-}
 /* 選択されたタブの内容のみを表示 */
 #tab1:checked ~ #content1_class,
 #tab2:checked ~ #content2_class{
