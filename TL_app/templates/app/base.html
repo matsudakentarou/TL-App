@@ -31,11 +31,20 @@
                     <a href="#">メニューリンク2</a>
                 </li>
                 <li>
-                  <form id="add_tle">
-                    {% csrf_token %}
-                    <input class="form-control" type="text" id="post_title" required />
-                    <button class="btn btn-primary mt-2" type="submit">送信</button>
-                  </form>
+                  <div id="app">
+                    {# 追加 #}
+                    <form @submit.prevent="createTask">
+                      <div class="form-group row">
+                          <div class="col-9">
+                              {# 追加 #}
+                              <input type="text" class="form-control" v-model="task.title" placeholder="卵を買う">
+                          </div>
+                          <div class="col-3">
+                              <button type="submit" class="btn btn-primary mt-auto">タスクを追加</button>
+                          </div>
+                      </div>
+                    </form>
+                  </div>>
                 </li>
             </ul>
           </div>
