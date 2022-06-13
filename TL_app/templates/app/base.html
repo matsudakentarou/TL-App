@@ -29,14 +29,10 @@
                     <a href="#">メニューリンク1</a>
                 </li>
                 <li>
-                    <a href="#">[[ tasks ]]</a>
-                </li>
-                
-                <li>
-                  <form @submit.prevent="createTle">
-                    <input type="text" class="form-control" v-model="tle.title" placeholder="タイトル">
-                    <input type="number"  v-model="tle.year" placeholder="年代">
-                    <button type="submit" class="btn">追加</button>
+                  <form action="" method="POST">
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <input type="submit" class="btn" value="送信">
                   </form>
                 </li>
             </ul>
