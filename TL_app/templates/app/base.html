@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %}{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="ja">
   <div id="app">
@@ -22,22 +22,19 @@
         <div class="hamburger-menu">
           <input type="checkbox" id="menu-btn-check">
           <label for="menu-btn-check" class="menu-btn"><span></span></label>
-          <!--ここからメニュー-->
           <div class="menu-content">
-            <ul>
-                <li>
-                    <a href="#">メニューリンク1</a>
-                </li>
-                <li>
-                  <form action="" method="POST">
-                    {{ form.as_p }}
-                    {% csrf_token %}
-                    <input type="submit" class="btn" value="送信">
-                  </form>
-                </li>
-            </ul>
+            <div class="menu-item">
+              <a href="admin/TL_app/tl/">タイムライン作成</a>
+            </div>
+            <div class="menu-item"><input type="radio" id=addtle name="tab_name" class="radio" value="選択" onclick="addTLEClick();">
+              <label for="addtle" >
+                <div class="">イベントの追加</div>
+              </label>
+            </div>
+            <div class="menu-item">
+              <a href="admin/">管理画面</a>
+            </div>
           </div>
-          <!--ここまでメニュー-->
         </div>
       </div>
     </nav>
@@ -46,6 +43,7 @@
       <div class="sidebar" id="sidebar">
         <input id="tab1" type="radio" name="tab_name">
         <input id="tab2" type="radio" name="tab_name">
+        <input id="tab3" type="radio" name="tab_name">
         <button class="hide" onclick="sidebarhide();"></button>
         <div class="content_class" id="content1_class">
           {% for tl in tl_data %}
@@ -69,6 +67,7 @@
         <div class="content_class" id="content2_class">
           {% for tl in tl_data %}
           <div class="sidebar_main">
+            
             <div class="TLS_info">
               <div class="text_area">
                 <div class="TL_title">{{ tl.title }}</div>
@@ -85,6 +84,20 @@
             <div class="OUT_LINE">TL-OUT-LINE</div>
           </div>
           {% endfor %}
+        </div>
+        <div class="content_class" id="content3_class">
+          <form action="" method="POST">
+            {% csrf_token %}
+            <label class="inputlabel">イベントのタイトル</label>
+            <div class="form">{{ form.title|add_class:'form_text' }}</div>
+            <label class="inputlabel">イベントが起きた年</label>
+            <div class="form">{{ form.year|add_class:'form_text' }}</div>
+            <label class="inputlabel">ランク</label>
+            <div class="form">{{ form.rank|add_class:'form_text' }}</div>
+            <label class="inputlabel">タイムライン</label>
+            <div class="form">{{ form.parent|add_class:'form_text' }}</div>
+            <input type="submit" class="submit-btn" value="送信">
+          </form>
         </div>
       </div>
     </main>

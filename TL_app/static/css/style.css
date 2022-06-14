@@ -78,25 +78,19 @@ body {
 	right: 100%;
 	background-color: #e3e3e3;
 	transition: all 0.5s;
-}
+	
+	
 
-.menu-content ul {
-	padding: 70px 10px 0;
 }
-
-.menu-content ul li {
-	border-top: solid 1px #ffffff;
-	list-style: none;
-}
-
-.menu-content ul li a {
-	display: block;
+.menu-item{
 	width: 100%;
-	font-size: 15px;
-	box-sizing: border-box;
-	text-decoration: none;
-	padding: 9px 15px 10px 0;
-	position: relative;
+	background-color: #6885b3;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom:solid;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 
@@ -213,9 +207,12 @@ button.hide{
 	height: 100%;
 	border: none;
 	float: left;
-	
+	background-color: #e9e9e9;
+	transition: all .2s;
 }
-
+button.hide:hover{
+	background-color: #f0f0f0;
+}
 .TL_info_tag{
 	left: 0px;
 	position: relative;top:80px;
@@ -250,7 +247,7 @@ button.hide{
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	background-color: #f1f1f1;
+	background-color: #e9e9e9;
 	box-shadow: 10px 10px 10px 20px #bfbfbf;
 	display: none;
 	z-index: 2;
@@ -284,7 +281,8 @@ input[name="tab_name"] {
 
 /* 選択されたタブの内容のみを表示 */
 #tab1:checked ~ #content1_class,
-#tab2:checked ~ #content2_class{
+#tab2:checked ~ #content2_class,
+#tab3:checked ~ #content3_class{
 	display: block;
 }
 
@@ -310,7 +308,11 @@ input[name="tab_name"] {
 	height: 100%;
 	width: calc(100%-60px);
 	padding-top: 50px;
-
+}
+#content3_class{
+	height: 100%;
+	width: calc(100%-60px);
+	padding-top: 80px;
 }
 #tab1{
 	display: none;
@@ -377,4 +379,38 @@ input[name="tab_name"] {
 .event_body{
 	font-size: 14px;
 	margin-top: 40px;
+}
+.form{
+	width: 100%;
+	padding-bottom: 20px;
+}
+.form_text{
+	width: 300px;
+	height: 36px;
+	margin-left: 20px;
+	border-radius: 18px;
+	border:1px #545454;
+	outline: none;
+	padding-left: 20px;
+	font-size: 18px;
+}
+.form_text:active{
+	border:1px #0e67aa;
+}
+.submit-btn{
+	width: 140px;
+	height: 40px;
+	margin-left: 100px;
+	margin-top: 40px;
+	background-color: #545454;
+	color: #fefefe;
+	border-radius: 20px
+}
+.submit-btn:hover{
+	background-color: #ffffff;
+	color: #535353;
+}
+.inputlabel{
+	font-size: 14px;
+	padding-left: 20px;
 }

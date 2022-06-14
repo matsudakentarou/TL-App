@@ -12,7 +12,10 @@ from django.views.generic import CreateView
 
 
 class IndexView(CreateView):
-
+    model = TLE
+    form_class = TleForm
+    success_url = reverse_lazy('index')
+    
     def get(self, request, *args, **kwargs):
         parent_id = 1
         form = TleForm()
@@ -28,8 +31,5 @@ class IndexView(CreateView):
         })
 
     def get_success_url(self):
-        model = TLE
-        form_class = TleForm
-        success_url = reverse_lazy('index')
         return resolve_url('index')
 
