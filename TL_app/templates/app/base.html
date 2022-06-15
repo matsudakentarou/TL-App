@@ -23,17 +23,10 @@
           <input type="checkbox" id="menu-btn-check">
           <label for="menu-btn-check" class="menu-btn"><span></span></label>
           <div class="menu-content">
-            <div class="menu-item">
-              <a href="admin/TL_app/tl/">タイムライン作成</a>
-            </div>
-            <div class="menu-item"><input type="radio" id=addtle name="tab_name" class="radio" value="選択" onclick="addTLEClick();">
-              <label for="addtle" >
-                <div class="">イベントの追加</div>
-              </label>
-            </div>
-            <div class="menu-item">
-              <a href="admin/">管理画面</a>
-            </div>
+            <a href="admin/TL_app/tl/" class="menu-item">タイムライン作成</a>
+            <input type="radio" id=addtle name="tab_name" class="radio" value="選択" onclick="addTLEClick();">
+              <label for="addtle" class="menu-item">イベントの追加</label>
+            <a href="admin/" class="menu-item">管理画面</a>
           </div>
         </div>
       </div>

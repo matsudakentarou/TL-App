@@ -20,7 +20,7 @@ class IndexView(CreateView):
         parent_id = 1
         form = TleForm()
         tl_data= TL.objects.filter(id=parent_id)
-        tle_data = TLE.objects.order_by('start_at').filter(parent=parent_id)
+        tle_data = TLE.objects.order_by('-rank').filter(parent=parent_id)
         for_range = [i for i in range(1800,2022)]
 
         return render(request, 'app/index.html', {

@@ -84,13 +84,18 @@ body {
 }
 .menu-item{
 	width: 100%;
-	background-color: #6885b3;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	border-bottom:solid;
+	border-color: #fcfcfc;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-bottom: 0;
+	color: #545454;
+}
+a{
+	text-decoration: none;
 }
 
 
