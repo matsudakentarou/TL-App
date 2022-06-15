@@ -6,11 +6,16 @@
     <label for="TLradio" class="text_tag">
       <div class="TL_title_tag">{{ tl.title }}</div>
       <div class="TL_english_tag">{{ tl.english }}</div>
+      <div class="TL_year_tag">{{ tl.start_year }}-{{ tl.end_year }}</div>
     </label>
     <div class="TL_img_tag"></div>
   </div>
   <div class="container">
-    
+  <div class="posts_side">
+    <div class="imgs"></div>
+    <div class="line_left"></div>
+    <div class="events"></div>
+  </div>  
   {% for y in for_range %}
   <div id="posts">
     <div class="imgs">
@@ -44,8 +49,12 @@
     </div>
   </div>
   {% endfor %}
+  <div class="posts_side">
+    <div class="imgs"></div>
+    <div class="line_right"></div>
+    <div class="events"></div>
+  </div>
 {% endfor %}
-</div>
 {% endblock %} 
 {% block extrajs %}
 {% endblock %}

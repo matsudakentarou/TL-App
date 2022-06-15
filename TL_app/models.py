@@ -27,13 +27,8 @@ class TL(models.Model):
     title = models.CharField(max_length=255)
     english = models.CharField(max_length=255)
     genre = models.CharField(max_length=255, choices=GENRE_CHOICES, default ='')
-    date = models.DateTimeField(
-        verbose_name='',
-        editable = True,
-        blank=True,
-        null=True,
-        default = timezone.now
-    )
+    start_year = models.IntegerField(default=1800)
+    end_year = models.IntegerField(default=1800)
     abstract = models.TextField(default ='')
     #img
     body = models.TextField(default ='')
