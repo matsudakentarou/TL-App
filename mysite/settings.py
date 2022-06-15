@@ -108,6 +108,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+IMAGE_ROOT = os.path.join(BASE_DIR, 'images')
+IMAGE_URL = '/images/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

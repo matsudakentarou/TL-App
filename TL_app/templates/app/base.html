@@ -79,7 +79,7 @@
           {% endfor %}
         </div>
         <div class="content_class" id="content3_class">
-          <form action="" method="POST">
+          <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <label class="inputlabel">イベントのタイトル</label>
             <div class="form">{{ form.title|add_class:'form_text' }}</div>
@@ -89,6 +89,8 @@
             <div class="form">{{ form.rank|add_class:'form_text' }}</div>
             <label class="inputlabel">タイムライン</label>
             <div class="form">{{ form.parent|add_class:'form_text' }}</div>
+            <label class="inputlabel">画像</label>
+            <div class="form">{{ form.image|add_class:'form_image' }}</div>
             <input type="submit" class="submit-btn" value="送信">
           </form>
         </div>

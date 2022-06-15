@@ -106,18 +106,17 @@ a{
 
 .imgs{
 	height: 40vh;
-	width: auto;
+	width: 90%;
 	display: flex;
 	justify-content:flex-end;
 	flex-flow: column;
 }
 
 .img{
-	height:100px;
-	width: auto;
+	height:auto;
+	width:100%;
 	background-color: #d1d1d1;
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-right: 20px;
 	margin-bottom: 20px;
 }
 
@@ -418,4 +417,10 @@ input[name="tab_name"] {
 .inputlabel{
 	font-size: 14px;
 	padding-left: 20px;
+}
+.form_image{
+	width: auto;
+	color: #535353;
+	font-size: 16px;
+	padding-left: 40px;
 }
