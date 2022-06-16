@@ -27,9 +27,8 @@
       {% endif %}
     {% endfor %}
     </div>
-    <div class="line">
-      <p>{{ y }}</p>
-    </div>
+    <input type="radio" id=TLradio onclick="TLClick();">
+      <label for=TLradio class="line">{{ y }}</label>
     <div class="events">
       {% for tle in tle_data %}
         {% if y|stringformat:"s" in tle.year|stringformat:"s" %}
@@ -39,7 +38,7 @@
           {% if tle.rank == 1 %}<div class="event-rank1"></div>{% endif %}
           <input type="radio" id=radio class="radio" value="選択" onclick="TLEClick();">
           <label for="radio" class="event-text">
-            <div class="event-day">{{ tle.start_at|date:"Y/m/d" }}</div>
+            <div class="event-day">{{ tle.year }}</div>
             <div class="event-title">{{ tle.title }}</div>
             <div class="event-id">{{ tle.id }}</div>
           </label>
