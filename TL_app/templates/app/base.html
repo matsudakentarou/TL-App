@@ -44,8 +44,9 @@
             <div class="TL_title">{{ tl.title }}</div>
             <div class="TL_english">{{ tl.english }}</div>
             <div class="TL_date">{{ tl.date|date:"Y" }}</div>
+            <img class="TL_tagimage" src="{{ tl.tagimage }}"/>
             <div class="TL_abstract">{{ tl.abstract }}</div>
-            <div class="TL_img"></div>
+            <img class="TL_mainimage" src="{{ tl.mainimage }}"/>
             <div class="TL_body">{{ tl.body }}</div>
             <div class="TL_PR"></div>
             <div class="IN_LINE">
@@ -60,14 +61,10 @@
         <div class="content_class" id="content2_class">
           {% for tl in tl_data %}
           <div class="sidebar_main">
-            
-            <div class="TLS_info">
-              <div class="text_area">
-                <div class="TL_title">{{ tl.title }}</div>
-                <div class="TL_english">{{ tl.english }}</div>
-                <div class="TL_date">{{ tl.start_year }}-{{ tl.end_year }}</div>
-              </div>
-            </div>
+            <div class="TL_title">{{ tl.title }}</div>
+            <div class="TL_english">{{ tl.english }}</div>
+            <div class="TL_date">{{ tl.date|date:"Y" }}</div>
+            <img class="TL_tagimage" src="{{ tl.tagimage }}"/>
             <div class="event_date">2020-11-15</div>
             <div class="event_title">銀座に開業</div>
             <div class="event_img"></div>

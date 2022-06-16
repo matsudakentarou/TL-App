@@ -446,3 +446,16 @@ input[name="tab_name"] {
 	font-size: 16px;
 	padding-left: 40px;
 }
+.TL_mainimage{
+	width: 100%;
+	height: auto;
+	background-color: #4669A2;
+}
+.TL_tagimage{
+	width: 60px;
+	height: 60px;
+	float: right;
+	position: fixed;
+	top: 40px;
+	right: 30px;
+}

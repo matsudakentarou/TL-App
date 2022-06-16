@@ -30,7 +30,8 @@ class TL(models.Model):
     start_year = models.IntegerField(default=1800)
     end_year = models.IntegerField(default=1800)
     abstract = models.TextField(default ='')
-    #img
+    tagimage = models.ImageField(upload_to='images', blank=True, null=True)
+    mainimage = models.ImageField(upload_to='images', blank=True, null=True)
     body = models.TextField(default ='')
     #inline = models.ManyToManyField
     #outline = models.ManyToManyField
@@ -42,20 +43,6 @@ class TL(models.Model):
 
 class TLE(models.Model):
     title = models.CharField(max_length=255)
-    start_at = models.DateTimeField(
-        verbose_name='',
-        editable = True,
-        blank=True,
-        null=True,
-        default = timezone.now
-    )
-    end_at = models.DateTimeField(
-        verbose_name='',
-        editable = True,
-        blank=True,
-        null=True,
-        default = timezone.now
-    )
     parent = models.ForeignKey(
         TL,
         on_delete=models.CASCADE,
