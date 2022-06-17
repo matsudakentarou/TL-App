@@ -52,6 +52,7 @@ class TLE(models.Model):
     year = models.IntegerField(default=1800)
     rank = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(3)], default=1)
     image = models.ImageField(upload_to='images', blank=True, null=True)
+    body = models.TextField(default ='')
 
     def __str__(self):
         return self.title
