@@ -17,10 +17,13 @@ class IndexView(CreateView):
     success_url = reverse_lazy('index')
     
     def get(self, request, *args, **kwargs):
+        print(request.GET.get(''))
         parent_id = 1
+        search_id= 55
         form = TleForm()
         tl_data= TL.objects.filter(id=parent_id)
         tle_data = TLE.objects.order_by('-rank').filter(parent=parent_id)
+        search_tle_data = TLE.objects.filter(id=search_id).first
         for_range = [i for i in range(1800,2022)]
 
         return render(request, 'app/index.html', {
@@ -28,7 +31,9 @@ class IndexView(CreateView):
             'tl_data': tl_data,
             'for_range': for_range,
             'form':form,
+            'search_tle_data':search_tle_data,
         })
+    
 
     def get_success_url(self):
         return resolve_url('index')

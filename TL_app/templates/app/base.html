@@ -48,7 +48,7 @@
             <div class="TL_abstract">{{ tl.abstract }}</div>
             <img class="TL_mainimage" src="{{ tl.mainimage }}"/>
             <div class="TL_body">{{ tl.body }}</div>
-            <div class="TL_PR"></div>
+            <div class="TL_PR">{{ check }}</div>
             <div class="IN_LINE">
               <div class="IN-LINE_title">IN-LINE</div>
             </div>
@@ -65,11 +65,10 @@
             <div class="TL_english">{{ tl.english }}</div>
             <div class="TL_date">{{ tl.date|date:"Y" }}</div>
             <img class="TL_tagimage" src="{{ tl.tagimage }}"/>
-            <div class="event_date">2020-11-15</div>
-            <div class="event_title">銀座に開業</div>
-            <div class="event_img"></div>
-            <div class="event_body">吾輩わがはいは猫である。名前はまだ無い。
-              どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。</div>
+            <div class="event_date">{{ search_tle_data.year }}</div>
+            <div class="event_title">{{ search_tle_data.title }}</div>
+            <img class="event_img" src="{{ search_tle_data.image }}"/>
+            <div class="event_body">{{ search_tle_data.body }}</div>
             <div class="IN_LINE">TL-IN-LINE</div>
             <div class="OUT_LINE">TL-OUT-LINE</div>
           </div>
@@ -78,6 +77,7 @@
         <div class="content_class" id="content3_class">
           <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
+            <input type="text" value="55" name="test-55">
             <label class="inputlabel">イベントのタイトル</label>
             <div class="form">{{ form.title|add_class:'form_text' }}</div>
             <label class="inputlabel">イベントが起きた年</label>
@@ -95,9 +95,6 @@
         </div>
       </div>
     </main>
-    <script>
-      const URL = '{% url "index" %}';
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.0/dist/js.cookie.min.js"></script>
     <script src="{% static 'javascript/main.js' %}"></script>
   </body>
