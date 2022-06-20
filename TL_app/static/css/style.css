@@ -236,7 +236,8 @@ button.hide:hover{
 }
 .TL_info_tag{
 	left: 0px;
-	position: relative;top:80px;
+	position: fixed;
+	top: 80px;
 	width: 280px;
 	height: 60px;
 	box-shadow:5px 5px 5px #bfbfbf;
