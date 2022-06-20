@@ -41,15 +41,14 @@
         <input id="tab3" type="radio" name="tab_name">
         <button class="hide" onclick="sidebarhide();"></button>
         <div class="content_class" id="content1_class">
-          {% for tl in tl_data %}
           <div class="sidebar_main">
-            <div class="TL_title">{{ tl.title }}</div>
-            <div class="TL_english">{{ tl.english }}</div>
-            <div class="TL_year">{{ tl.start_year }}-</div>
-            <img class="TL_tagimage" src="{{ tl.tagimage }}"/>
+            <div class="TL_title">{{ tl_data.title }}</div>
+            <div class="TL_english">{{ tl_data.english }}</div>
+            <div class="TL_year">{{ tl_data.start_year }}-</div>
+            <img class="TL_tagimage" src="{{ tl_data.tagimage }}"/>
             <div class="TL_abstract">{{ tl.abstract }}</div>
-            <img class="TL_mainimage" src="{{ tl.mainimage }}"/>
-            <div class="TL_body">{{ tl.body }}</div>
+            <img class="TL_mainimage" src="{{ tl_data.mainimage }}"/>
+            <div class="TL_body">{{ tl_data.body }}</div>
             <div class="TL_PR"></div>
             <div class="IN_LINE">
               <div class="IN-LINE_title">IN-LINE</div>
@@ -58,15 +57,13 @@
               <div class="OUT-LINE_title">OUT-LINE</div>
             </div>
           </div>
-          {% endfor %}
         </div>
         <div class="content_class" id="content2_class">
-          {% for tl in tl_data %}
           <div class="sidebar_main">
-            <div class="TL_title">{{ tl.title }}</div>
-            <div class="TL_english">{{ tl.english }}</div>
-            <img class="TL_tagimage" src="{{ tl.tagimage }}"/>
-            <div class="TL_year">{{ tl.start_year }}-</div>
+            <div class="TL_title">{{ tl_data.title }}</div>
+            <div class="TL_english">{{ tl_data.english }}</div>
+            <img class="TL_tagimage" src="{{ tl_data.tagimage }}"/>
+            <div class="TL_year">{{ tl_data.start_year }}-</div>
             <div class="event_date">{{ search_tle_data.year }}</div>
             <div class="event_title">{{ search_tle_data.title }}</div>
             {% if search_tle_data.image %}
@@ -78,7 +75,6 @@
             <div class="IN_LINE">TL-IN-LINE</div>
             <div class="OUT_LINE">TL-OUT-LINE</div>
           </div>
-          {% endfor %}
         </div>
         <div class="content_class" id="content3_class">
           <form action="" method="POST" enctype="multipart/form-data">

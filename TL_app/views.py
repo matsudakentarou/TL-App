@@ -19,7 +19,7 @@ def index(request):
         if 'radio_id' in request.POST:
             form = TleForm()
             for_range = [i for i in range(1800,2023)]
-            tl_data= TL.objects.filter(id=parent_id)
+            tl_data= TL.objects.all().first
             tle_data = TLE.objects.order_by('-rank').filter(parent=parent_id)
 
             search_id = request.POST.get('radio_id',None)
@@ -47,7 +47,7 @@ def index(request):
     else:
         for_range = [i for i in range(1800,2022)]
         form = TleForm()
-        tl_data= TL.objects.filter(id=parent_id)
+        tl_data= TL.objects.all().first
         tle_data = TLE.objects.order_by('-rank').filter(parent=parent_id)
         context={
             'tle_data': tle_data,

@@ -1,14 +1,12 @@
 {% extends "app/base.html" %} {% block content %}
-{% for tl in tl_data %}  
-  
   <div class="TL_info_tag">
     <input type="radio" id=TLradio class="TLradio" value="選択" onclick="TLClick();">
     <label for="TLradio" class="text_tag">
-      <div class="TL_title_tag">{{ tl.title }}</div>
-      <div class="TL_english_tag">{{ tl.english }}</div>
-      <div class="TL_year_tag">{{ tl.start_year }}-{{ tl.end_year }}</div>
+      <div class="TL_title_tag">{{ tl_data.title }}</div>
+      <div class="TL_english_tag">{{ tl_data.english }}</div>
+      <div class="TL_year_tag">{{ tl_data.start_year }}-{{ tl.end_year }}</div>
     </label>
-    <img class="TL_img_tag" src="{{ tl.tagimage }}"/>
+    <img class="TL_img_tag" src="{{ tl_data.tagimage }}"/>
   </div>
   <div class="container">
   <div class="posts_side">
@@ -54,7 +52,6 @@
     <div class="line_right"></div>
     <div class="events"></div>
   </div>
-{% endfor %}
 {% endblock %} 
 {% block extrajs %}
 {% endblock %}
