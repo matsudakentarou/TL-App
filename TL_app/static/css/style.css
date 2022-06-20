@@ -10,7 +10,8 @@ body {
 	display: flex;
 	flex-flow: column;
 	min-height: 80vh;
-	margin: 0px;	
+	margin: 0px;
+	overflow: hidden;
 }
 
 .container{
@@ -301,6 +302,10 @@ input[name="tab_name"] {
 	display: none;
 	overflow: hidden;
 }
+.content_class::-webkit-scrollbar {  
+	display: none; 
+}
+
 
 /* 選択されたタブの内容のみを表示 */
 #tab1:checked ~ #content1_class,
@@ -325,7 +330,6 @@ input[name="tab_name"] {
 	height: 100%;
 	width: calc(100%-40px);
 	padding-top: 50px;
-
 }
 #content2_class{
 	height: 100%;
@@ -350,6 +354,7 @@ input[name="tab_name"] {
 	padding-right: 25px;
 	overflow: scroll;
 }
+
 .TL_title{
 	font-size: 20px;
 	

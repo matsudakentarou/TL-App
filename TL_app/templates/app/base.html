@@ -65,13 +65,14 @@
           <div class="sidebar_main">
             <div class="TL_title">{{ tl.title }}</div>
             <div class="TL_english">{{ tl.english }}</div>
-            <div class="TL_date">{{ tl.date|date:"Y" }}</div>
+            <div class="TL_date">{{ tl.year}}</div>
             <img class="TL_tagimage" src="{{ tl.tagimage }}"/>
             <div class="event_date">{{ search_tle_data.year }}</div>
             <div class="event_title">{{ search_tle_data.title }}</div>
+            {% if search_tle_data.image %}
             <img class="event_img" src="{{ search_tle_data.image }}"/>
+            {% endif %}
             <div class="event_body">{{ search_tle_data.body }}</div>
-
             <div class="IN_LINE">TL-IN-LINE</div>
             <div class="OUT_LINE">TL-OUT-LINE</div>
           </div>
