@@ -105,7 +105,6 @@ a{
 }
 
 
-
 #menu-btn-check:checked ~ .menu-content {
     right: 70%;/*メニューを画面内へ*/
 }
@@ -466,9 +465,9 @@ input[name="tab_name"] {
 	width: 60px;
 	height: 60px;
 	float: right;
-	position: fixed;
-	top: 40px;
-	right: 30px;
+	position: relative;
+	top: -60px;
+	right: -10px;
 }
 .submit_hide{
 	display: none;
