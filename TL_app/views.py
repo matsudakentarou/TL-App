@@ -13,15 +13,14 @@ from django.views.generic import CreateView
 
 
 def index(request):
-    parent_id = 1
-
     if request.method == "POST":
         if 'radio_id' in request.POST:
             form = TleForm()
             for_range = [i for i in range(1800,2023)]
             tl_data= TL.objects.all().first
+            TL_id_Min = TL.objects.all().aggregate(Min('id'))
+            parent_id = TL_id_Min['id__min']
             tle_data = TLE.objects.order_by('-rank').filter(parent=parent_id)
-
             search_id = request.POST.get('radio_id',None)
             search_tle_data = TLE.objects.filter(id=search_id).first
             context ={
@@ -48,6 +47,8 @@ def index(request):
         for_range = [i for i in range(1800,2022)]
         form = TleForm()
         tl_data= TL.objects.all().first
+        TL_id_Min = TL.objects.all().aggregate(Min('id'))
+        parent_id = TL_id_Min['id__min']
         tle_data = TLE.objects.order_by('-rank').filter(parent=parent_id)
         context={
             'tle_data': tle_data,
