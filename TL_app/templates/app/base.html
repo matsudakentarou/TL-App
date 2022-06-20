@@ -45,13 +45,12 @@
           <div class="sidebar_main">
             <div class="TL_title">{{ tl.title }}</div>
             <div class="TL_english">{{ tl.english }}</div>
-            <div class="TL_year">{{ tl.start_year }}</div>
+            <div class="TL_year">{{ tl.start_year }}-</div>
             <img class="TL_tagimage" src="{{ tl.tagimage }}"/>
             <div class="TL_abstract">{{ tl.abstract }}</div>
             <img class="TL_mainimage" src="{{ tl.mainimage }}"/>
             <div class="TL_body">{{ tl.body }}</div>
-            <div class="TL_PR"><iframe width="560" height="315" src="https://www.youtube.com/embed/eT3UpRMxAEE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.469594756732!2d139.69002786615255!3d35.69006008019242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd4b71a37a1%3A0xf1665c37f38661e8!2z5p2x5Lqs6YO95bqB!5e0!3m2!1sja!2sjp!4v1655713617169!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="TL_PR"></div>
             <div class="IN_LINE">
               <div class="IN-LINE_title">IN-LINE</div>
             </div>
@@ -66,8 +65,8 @@
           <div class="sidebar_main">
             <div class="TL_title">{{ tl.title }}</div>
             <div class="TL_english">{{ tl.english }}</div>
-            <div class="TL_year">{{ tl.start_year}}-</div>
             <img class="TL_tagimage" src="{{ tl.tagimage }}"/>
+            <div class="TL_year">{{ tl.start_year }}-</div>
             <div class="event_date">{{ search_tle_data.year }}</div>
             <div class="event_title">{{ search_tle_data.title }}</div>
             {% if search_tle_data.image %}

@@ -263,6 +263,7 @@ button.hide:hover{
 }
 .TL_year_tag{
 	font-size: 6px;
+
 }
 
 .sidebar{
@@ -365,6 +366,10 @@ input[name="tab_name"] {
 }
 .TL_year{
 	font-size: 8px;
+	width: 332px;
+	padding-bottom: 20px;
+	border-bottom: 5px solid;
+	border-color: #6b798f;
 }
 .TL_abstract{
 	font-size: 14px;
@@ -466,7 +471,7 @@ input[name="tab_name"] {
 	height: 60px;
 	float: right;
 	position: relative;
-	top: -60px;
+	top: -45px;
 	right: -10px;
 }
 .submit_hide{
