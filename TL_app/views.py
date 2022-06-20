@@ -1,15 +1,7 @@
-from django.urls import reverse
-from multiprocessing import parent_process
-from django.urls import reverse_lazy
-from django.views.generic import View
 from .models import (TLE, TL)
-from django.http import JsonResponse
-from django.db.models import Max, Min
+from django.db.models import Min
 from django.shortcuts import redirect, render
-import json
-from django.forms import model_to_dict
 from .forms import TleForm
-from django.views.generic import CreateView
 
 
 def index(request):
