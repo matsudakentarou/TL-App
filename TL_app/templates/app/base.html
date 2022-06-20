@@ -73,9 +73,9 @@
             {% if search_tle_data.image %}
             <img class="event_img" src="{{ search_tle_data.image }}"/>
             {% endif %}
+            <div class="event_body">{{ search_tle_data.body }}</div>
             {{ search_tle_data.video|safe }}
             {{ search_tle_data.map|safe }}
-            <div class="event_body">{{ search_tle_data.body }}</div>
             <div class="IN_LINE">TL-IN-LINE</div>
             <div class="OUT_LINE">TL-OUT-LINE</div>
           </div>
@@ -96,6 +96,10 @@
             <div class="form">{{ form.body|add_class:'form_text_long' }}</div>
             <label class="inputlabel">画像を添付</label>
             <div class="form">{{ form.image|add_class:'form_image' }}</div>
+            <label class="inputlabel">動画を添付</label>
+            <div class="form">{{ form.video|add_class:'form_text_long' }}</div>
+            <label class="inputlabel">地図を添付</label>
+            <div class="form">{{ form.map|add_class:'form_text_long' }}</div>
             <input type="submit" class="submit-btn" value="追加">
           </form>
         </div>

@@ -301,6 +301,7 @@ input[name="tab_name"] {
 .content_class {
 	display: none;
 	overflow: hidden;
+	overflow: scroll;
 }
 .content_class::-webkit-scrollbar {  
 	display: none; 
@@ -424,7 +425,7 @@ input[name="tab_name"] {
 }
 .form_text_long{
 	width: 300px;
-	height: 200px;
+	height: 150px;
 	margin-left: 20px;
 	border-radius: 18px;
 	border:1px #545454;
@@ -437,7 +438,6 @@ input[name="tab_name"] {
 	width: 140px;
 	height: 40px;
 	margin-left: 100px;
-	margin-top: 40px;
 	background-color: #545454;
 	color: #fefefe;
 	border-radius: 20px
