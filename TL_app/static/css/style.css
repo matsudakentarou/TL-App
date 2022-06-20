@@ -464,3 +464,10 @@ input[name="tab_name"] {
 	top: 40px;
 	right: 30px;
 }
+.submit_hide{
+	display: none;
+}
+.event-id{
+	border: none;
+	pointer-events : none;
+}

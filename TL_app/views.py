@@ -21,8 +21,6 @@ def index(request):
 
         search_id = request.POST.get('radio_id',None)
         search_tle_data = TLE.objects.filter(id=search_id).first
-        print("POSTです")
-        print(request.POST.get('radio_id'))
         context ={
             'tle_data': tle_data,
             'tl_data': tl_data,
@@ -39,8 +37,6 @@ def index(request):
 
         search_id = 55
         search_tle_data = TLE.objects.filter(id=search_id).first
-        
-        print("GETです")
         context={
             'tle_data': tle_data,
             'tl_data': tl_data,

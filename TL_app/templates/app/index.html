@@ -37,12 +37,11 @@
           {% if tle.rank == 3 %}<div class="event-rank3"></div>{% endif %}
           {% if tle.rank == 2 %}<div class="event-rank2"></div>{% endif %}
           {% if tle.rank == 1 %}<div class="event-rank1"></div>{% endif %}
-          <input type="submit" id=radio class="radio" name = "radio"  >
-          <label for="radio" class="event-text">
+          <label for="{{ tle.id }}" class="event-text">
             <div class="event-day">{{ tle.year }}</div>
             <div class="event-title">{{ tle.title }}</div>
             <input type="text" class="event-id" name="radio_id" value="{{ tle.id }}">
-            <input type="submit" class="submit" onclick="TLEClick();">
+            <input type="submit" class="submit_hide" id="{{ tle.id }}" name="submit" onclick="TLEClick();">
           </label>
         </form>
         {% endif %}
