@@ -26,6 +26,8 @@
             <a href="admin/TL_app/tl/" class="menu-item">タイムライン作成</a>
             <input type="radio" id=addtle name="tab_name" class="radio" value="選択" onclick="addTLEClick();">
               <label for="addtle" class="menu-item">イベントの追加</label>
+            <input type="radio" id=tle_detail name="tab_name" class="radio" value="選択" onclick="TLEClick();">
+              <label for="tle_detail" class="menu-item">イベントの詳細</label>
             <a href="admin/" class="menu-item">管理画面</a>
           </div>
         </div>
@@ -35,7 +37,7 @@
       {% block content %} {% endblock %}
       <div class="sidebar" id="sidebar">
         <input id="tab1" type="radio" name="tab_name">
-        <input id="tab2" type="radio" name="tab_name">
+        <input id="tab2" type="radio" name="tab_name" checked>
         <input id="tab3" type="radio" name="tab_name">
         <button class="hide" onclick="sidebarhide();"></button>
         <div class="content_class" id="content1_class">
@@ -48,7 +50,7 @@
             <div class="TL_abstract">{{ tl.abstract }}</div>
             <img class="TL_mainimage" src="{{ tl.mainimage }}"/>
             <div class="TL_body">{{ tl.body }}</div>
-            <div class="TL_PR">{{ check }}</div>
+            <div class="TL_PR"><iframe width="100%" height="auto" src="https://www.youtube.com/embed/rhK9TscjW7I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
             <div class="IN_LINE">
               <div class="IN-LINE_title">IN-LINE</div>
             </div>
@@ -61,6 +63,7 @@
         <div class="content_class" id="content2_class">
           {% for tl in tl_data %}
           <div class="sidebar_main">
+            <div class="TL_title">{{ search_tle_data.id }}</div>
             <div class="TL_title">{{ tl.title }}</div>
             <div class="TL_english">{{ tl.english }}</div>
             <div class="TL_date">{{ tl.date|date:"Y" }}</div>
@@ -69,6 +72,7 @@
             <div class="event_title">{{ search_tle_data.title }}</div>
             <img class="event_img" src="{{ search_tle_data.image }}"/>
             <div class="event_body">{{ search_tle_data.body }}</div>
+
             <div class="IN_LINE">TL-IN-LINE</div>
             <div class="OUT_LINE">TL-OUT-LINE</div>
           </div>
@@ -77,7 +81,6 @@
         <div class="content_class" id="content3_class">
           <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <input type="text" value="55" name="test-55">
             <label class="inputlabel">イベントのタイトル</label>
             <div class="form">{{ form.title|add_class:'form_text' }}</div>
             <label class="inputlabel">イベントが起きた年</label>
@@ -90,7 +93,7 @@
             <div class="form">{{ form.body|add_class:'form_text_long' }}</div>
             <label class="inputlabel">画像を添付</label>
             <div class="form">{{ form.image|add_class:'form_image' }}</div>
-            <input type="submit" class="submit-btn" value="送信">
+            <input type="submit" class="submit-btn" value="追加">
           </form>
         </div>
       </div>

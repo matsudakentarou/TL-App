@@ -19,7 +19,6 @@ function addTLEClick(){
 	tab3.checked = true ;
 }
 
-
 function sidebarhide(){
 	document.getElementById("sidebar").style.display="none";
 }

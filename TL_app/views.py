@@ -10,31 +10,43 @@ from django.forms import model_to_dict
 from .forms import TleForm
 from django.views.generic import CreateView
 
+def index(request):
+    parent_id = 1
 
-class IndexView(CreateView):
-    model = TLE
-    form_class = TleForm
-    success_url = reverse_lazy('index')
-    
-    def get(self, request, *args, **kwargs):
-        print(request.GET.get(''))
-        parent_id = 1
-        search_id= 55
+    if request.method == "POST":
+        form = TleForm()
+        for_range = [i for i in range(1800,2022)]
+        tl_data= TL.objects.filter(id=parent_id)
+        tle_data = TLE.objects.order_by('-rank').filter(parent=parent_id)
+
+        search_id = request.POST.get('radio_id',None)
+        search_tle_data = TLE.objects.filter(id=search_id).first
+        print("POSTです")
+        print(request.POST.get('radio_id'))
+        context ={
+            'tle_data': tle_data,
+            'tl_data': tl_data,
+            'for_range': for_range,
+            'search_id':search_id,
+            'form':form,
+            'search_tle_data':search_tle_data,
+        }
+    else:
+        for_range = [i for i in range(1800,2022)]
         form = TleForm()
         tl_data= TL.objects.filter(id=parent_id)
         tle_data = TLE.objects.order_by('-rank').filter(parent=parent_id)
-        search_tle_data = TLE.objects.filter(id=search_id).first
-        for_range = [i for i in range(1800,2022)]
 
-        return render(request, 'app/index.html', {
+        search_id = 55
+        search_tle_data = TLE.objects.filter(id=search_id).first
+        
+        print("GETです")
+        context={
             'tle_data': tle_data,
             'tl_data': tl_data,
             'for_range': for_range,
             'form':form,
             'search_tle_data':search_tle_data,
-        })
-    
+        }
 
-    def get_success_url(self):
-        return resolve_url('index')
-
+    return render(request, 'app/index.html', context)

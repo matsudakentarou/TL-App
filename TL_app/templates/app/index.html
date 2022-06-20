@@ -32,17 +32,19 @@
     <div class="events">
       {% for tle in tle_data %}
         {% if y|stringformat:"s" in tle.year|stringformat:"s" %}
-        <div class="event">
+        <form action="" class="event" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
           {% if tle.rank == 3 %}<div class="event-rank3"></div>{% endif %}
           {% if tle.rank == 2 %}<div class="event-rank2"></div>{% endif %}
           {% if tle.rank == 1 %}<div class="event-rank1"></div>{% endif %}
-          <input type="radio" id=radio class="radio" name = "radio" value="選択" onclick="TLEClick();">
+          <input type="submit" id=radio class="radio" name = "radio"  >
           <label for="radio" class="event-text">
             <div class="event-day">{{ tle.year }}</div>
             <div class="event-title">{{ tle.title }}</div>
-            <div class="event-id">{{ tle.id }}</div>
+            <input type="text" class="event-id" name="radio_id" value="{{ tle.id }}">
+            <input type="submit" class="submit" onclick="TLEClick();">
           </label>
-        </div>
+        </form>
         {% endif %}
       {% endfor %}
     </div>
