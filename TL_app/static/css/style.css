@@ -367,6 +367,9 @@ input[name="tab_name"] {
 	padding-right: 25px;
 	overflow: auto;
 }
+.sidebar_main::-webkit-scrollbar { 
+	display: none;
+      }
 
 .TL_title{
 	font-size: 20px;
