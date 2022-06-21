@@ -268,13 +268,23 @@ button.hide:hover{
 
 .sidebar{
 	width: 400px;
-	height: calc(100vh);
+	height: 100vh;
 	position: fixed;
 	bottom: 0;
 	right: 0;
 	background-color: #e9e9e9;
-	box-shadow: 10px 10px 10px 20px #bfbfbf;
 	display: block;
+	z-index: 3;
+}
+.shadow{
+	width:400px;
+	height: 100vh;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-color: #727272;
+	mix-blend-mode: multiply;
+	filter: blur(14px);
 	z-index: 2;
 }
 
