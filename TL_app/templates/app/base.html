@@ -26,8 +26,6 @@
             <a href="admin/TL_app/tl/" class="menu-item">タイムライン作成</a>
             <input type="radio" id=addtle name="tab_name" class="radio" value="選択" onclick="addTLEClick();">
               <label for="addtle" class="menu-item">イベントの追加</label>
-            <input type="radio" id=tle_detail name="tab_name" class="radio" value="選択" onclick="TLEClick();">
-              <label for="tle_detail" class="menu-item">イベントの詳細</label>
             <a href="admin/" class="menu-item">管理画面</a>
           </div>
         </div>
@@ -99,7 +97,7 @@
           </form>
         </div>
       </div>
-      <div class="shadow"></div>
+      <div class="shadow" id="shadow"></div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.0/dist/js.cookie.min.js"></script>
     <script src="{% static 'javascript/main.js' %}"></script>
