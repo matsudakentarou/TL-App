@@ -24,7 +24,7 @@ body {
 
 .header{
 	width: 100%;
-	height: 60px;
+	height: 5vh;
 	position: fixed;
 	background-color: #d1d1d1;
 	z-index: 1;
@@ -104,13 +104,12 @@ a{
 	text-decoration: none;
 }
 
-
 #menu-btn-check:checked ~ .menu-content {
     right: 70%;/*メニューを画面内へ*/
 }
 
 .imgs{
-	height: 40vh;
+	height: 45vh;
 	width: 90%;
 	display: flex;
 	justify-content:flex-end;
